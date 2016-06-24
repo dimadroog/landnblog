@@ -10,6 +10,79 @@
  */
 class Category extends CActiveRecord
 {
+
+    public static function tree($root = false){ /*FOR TREE*/
+		$categories = Category::model()->findAll();
+		$result_array = Category::getMenu($categories);
+		if ($root) {
+			array_push($result_array, array('id'=> 0, 'name'=> 'Корневая категория', 'full_name'=> 'Корневая категория'));
+		}
+		return $result_array;
+	}
+
+	public static function getMenu($categories) { /*FOR TREE*/
+	    $output_array = array();
+	    $parent_id = 0; 
+	    $lvl = -1;
+	    $cat = Category::prepareTree($categories);
+	    Category::buildTree($cat, $parent_id, $output_array, $lvl);
+	    return $output_array;
+	}
+
+	public static function prepareTree($categories){  /*FOR TREE*/
+	    $arr = array();
+	    foreach($categories as $category)
+	    {
+	        if (!$category->parent_id)
+	            $category->parent_id = 0;
+	        if(empty($arr[$category->parent_id]))
+	            $arr[$category->parent_id] = array();
+	        $arr[$category->parent_id][] = $category;
+	    }
+	    return $arr;    
+	}
+
+	public static function buildTree($arr, $parent_id, &$output_array, $lvl) { /*FOR TREE*/
+	    $lvl = $lvl+1;
+	    if(empty($arr[$parent_id])) { //escape from recursion
+	        return;
+	    }
+	    for($i = 0; $i < count($arr[$parent_id]);$i++) {
+	        $output_array[]= array(
+	        	'id' => $arr[$parent_id][$i]->id,
+	        	'parent_id' => $arr[$parent_id][$i]->parent_id,
+	        	'name' => $arr[$parent_id][$i]->name,
+	        	'full_name' => Category::fullName($arr[$parent_id][$i]->id),
+	        	'level' => $lvl,
+	        	);
+	        Category::buildTree($arr, $arr[$parent_id][$i]->id, $output_array, $lvl);
+	    }
+	}
+
+	public static function fullName($id){
+		if ($id > 0) {
+			$cat = Category::model()->findByPk($id);
+			$str = '';
+			$current_cat = $cat->name;
+			$arr = array();
+			do {
+				$cat = Category::model()->findByPk($cat->parent_id);
+				if ($cat){
+					$arr[] = $cat->name; 
+				}
+			}
+			while ($cat->parent_id > 0);
+			if (count($arr) > 0) {;
+				$str .= implode(array_reverse($arr), ' > ');
+				$str .= ' > ';
+			}
+			return $str.$current_cat;
+		} else {
+			return 'Корневая категория';
+		}
+	}
+
+
 	/**
 	 * @return string the associated database table name
 	 */
@@ -44,6 +117,8 @@ class Category extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'categoryArticle' => array(self::MANY_MANY, 'Article', 'article_category(category_id, article_id)'),
+            'childs'=>array(self::HAS_MANY, get_class($this), 'parent_id'),
+            'parent'=>array(self::BELONGS_TO, get_class($this), 'parent_id'),
 		);
 	}
 

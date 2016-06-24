@@ -143,7 +143,6 @@ class BlockController extends Controller
 						),
 					));
 				$blocks	= $dataProvider->getData();
-				$arr = array();
 				foreach ($blocks as $key => $block) {
 					$block->weight = $key+1;
 					$block->save();
@@ -153,6 +152,24 @@ class BlockController extends Controller
 			throw new CHttpException(403, 'У Вас нет прав для просмотра этой страницы.');
 		}
 	}
+	
+
+	public function actionAdmin()
+	{
+		if (Yii::app()->user->name == 'admin' || Yii::app()->user->name == 'superadmin') {
+			$dataProvider = new CActiveDataProvider('Block', array(
+				'criteria'=>array(
+        			'order'=>'weight ASC',
+    				),
+				));
+			$blocks	= $dataProvider->getData();
+			$this->render('admin',array('blocks' => $blocks));
+		} else {
+			// throw new CHttpException(403, 'У Вас нет прав для просмотра этой страницы.');
+			$this->redirect(array('site/login'));
+		}
+	}
+
 	
 	public function actionWeightUp($id)
 	{

@@ -50,7 +50,7 @@
 	</div>
 
     <div class="form-group">
-        <label class="control-label" for="content">Публикация</label>
+        <label class="control-label" for="content">Блог</label>
         <div class="checkbox">
             <label>
               <input type="checkbox" name="articles" <?php echo ($item->articles == 1)?'checked':''; ?> > Добавление статей на сайте?

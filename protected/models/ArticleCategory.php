@@ -10,6 +10,16 @@
  */
 class ArticleCategory extends CActiveRecord
 {
+
+	public static function isChecked($article_id, $category_id){
+		$article = Article::model()->findByPk($article_id);
+		foreach ($article->articleCategory as $value) {
+			if ($category_id == $value->id) {
+				$result = 'selected';
+			}
+		}
+		return $result;
+	}
 	/**
 	 * @return string the associated database table name
 	 */

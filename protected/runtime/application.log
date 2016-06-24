@@ -3513,3 +3513,852 @@ Stack trace:
 REQUEST_URI=/landingcms/setting/index
 HTTP_REFERER=http://localhost/landingcms/admin
 ---
+2016/06/20 09:48:32 [error] [exception.CException] exception 'CException' with message 'Property "Setting.articles" is not defined.' in /var/www/html/landnblog/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/html/landnblog/framework/db/ar/CActiveRecord.php(145): CComponent->__get('articles')
+#1 /var/www/html/landnblog/protected/views/setting/edit.php(56): CActiveRecord->__get('articles')
+#2 /var/www/html/landnblog/framework/web/CBaseController.php(126): require('/var/www/html/l...')
+#3 /var/www/html/landnblog/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/l...', Array, true)
+#4 /var/www/html/landnblog/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/l...', Array, true)
+#5 /var/www/html/landnblog/framework/web/CController.php(782): CController->renderPartial('edit', Array, true)
+#6 /var/www/html/landnblog/protected/controllers/SettingController.php(36): CController->render('edit', Array)
+#7 /var/www/html/landnblog/framework/web/actions/CInlineAction.php(49): SettingController->actionEdit()
+#8 /var/www/html/landnblog/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#9 /var/www/html/landnblog/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#10 /var/www/html/landnblog/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /var/www/html/landnblog/framework/web/CWebApplication.php(282): CController->run('edit')
+#12 /var/www/html/landnblog/framework/web/CWebApplication.php(141): CWebApplication->runController('setting/edit')
+#13 /var/www/html/landnblog/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#14 /var/www/html/landnblog/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/landnblog/setting/edit
+HTTP_REFERER=http://localhost/landnblog/admin
+---
+2016/06/20 15:05:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "admin".' in /var/www/html/landnblog/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/landnblog/framework/web/CController.php(270): CController->missingAction('admin')
+#1 /var/www/html/landnblog/framework/web/CWebApplication.php(282): CController->run('admin')
+#2 /var/www/html/landnblog/framework/web/CWebApplication.php(141): CWebApplication->runController('block/admin')
+#3 /var/www/html/landnblog/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /var/www/html/landnblog/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/landnblog/block/admin
+HTTP_REFERER=http://localhost/landnblog/admin
+---
+2016/06/20 15:10:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "admin".' in /var/www/html/landnblog/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/landnblog/framework/web/CController.php(270): CController->missingAction('admin')
+#1 /var/www/html/landnblog/framework/web/CWebApplication.php(282): CController->run('admin')
+#2 /var/www/html/landnblog/framework/web/CWebApplication.php(141): CWebApplication->runController('article/admin')
+#3 /var/www/html/landnblog/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /var/www/html/landnblog/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/landnblog/article/admin
+HTTP_REFERER=http://localhost/landnblog/admin
+---
+2016/06/20 15:10:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "admin".' in /var/www/html/landnblog/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/landnblog/framework/web/CController.php(270): CController->missingAction('admin')
+#1 /var/www/html/landnblog/framework/web/CWebApplication.php(282): CController->run('admin')
+#2 /var/www/html/landnblog/framework/web/CWebApplication.php(141): CWebApplication->runController('article/admin')
+#3 /var/www/html/landnblog/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /var/www/html/landnblog/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/landnblog/article/admin
+HTTP_REFERER=http://localhost/landnblog/admin
+---
+2016/06/20 15:27:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "create".' in /var/www/html/landnblog/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/landnblog/framework/web/CController.php(270): CController->missingAction('create')
+#1 /var/www/html/landnblog/framework/web/CWebApplication.php(282): CController->run('create')
+#2 /var/www/html/landnblog/framework/web/CWebApplication.php(141): CWebApplication->runController('category/create')
+#3 /var/www/html/landnblog/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /var/www/html/landnblog/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/landnblog/category/create
+HTTP_REFERER=http://localhost/landnblog/category/admin
+---
+2016/06/21 09:10:30 [error] [php] print_r() expects at least 1 parameter, 0 given (/var/www/html/landnblog/protected/views/category/create.php:34)
+Stack trace:
+#0 /var/www/html/landnblog/framework/web/CBaseController.php(95): CategoryController->renderInternal()
+#1 /var/www/html/landnblog/framework/web/CController.php(869): CategoryController->renderFile()
+#2 /var/www/html/landnblog/framework/web/CController.php(782): CategoryController->renderPartial()
+#3 /var/www/html/landnblog/protected/controllers/CategoryController.php(57): CategoryController->render()
+#4 /var/www/html/landnblog/framework/web/actions/CInlineAction.php(49): CategoryController->actionCreate()
+#5 /var/www/html/landnblog/framework/web/CController.php(308): CInlineAction->runWithParams()
+#6 /var/www/html/landnblog/framework/web/CController.php(286): CategoryController->runAction()
+#7 /var/www/html/landnblog/framework/web/CController.php(265): CategoryController->runActionWithFilters()
+#8 /var/www/html/landnblog/framework/web/CWebApplication.php(282): CategoryController->run()
+#9 /var/www/html/landnblog/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#10 /var/www/html/landnblog/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#11 /var/www/html/landnblog/index.php(13): CWebApplication->run()
+REQUEST_URI=/landnblog/category/create
+in /var/www/html/landnblog/protected/views/category/create.php (34)
+in /var/www/html/landnblog/protected/controllers/CategoryController.php (57)
+in /var/www/html/landnblog/index.php (13)
+2016/06/21 09:13:45 [error] [php] print_r() expects at least 1 parameter, 0 given (/var/www/html/landnblog/protected/views/category/create.php:33)
+Stack trace:
+#0 /var/www/html/landnblog/framework/web/CBaseController.php(95): CategoryController->renderInternal()
+#1 /var/www/html/landnblog/framework/web/CController.php(869): CategoryController->renderFile()
+#2 /var/www/html/landnblog/framework/web/CController.php(782): CategoryController->renderPartial()
+#3 /var/www/html/landnblog/protected/controllers/CategoryController.php(57): CategoryController->render()
+#4 /var/www/html/landnblog/framework/web/actions/CInlineAction.php(49): CategoryController->actionCreate()
+#5 /var/www/html/landnblog/framework/web/CController.php(308): CInlineAction->runWithParams()
+#6 /var/www/html/landnblog/framework/web/CController.php(286): CategoryController->runAction()
+#7 /var/www/html/landnblog/framework/web/CController.php(265): CategoryController->runActionWithFilters()
+#8 /var/www/html/landnblog/framework/web/CWebApplication.php(282): CategoryController->run()
+#9 /var/www/html/landnblog/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#10 /var/www/html/landnblog/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#11 /var/www/html/landnblog/index.php(13): CWebApplication->run()
+REQUEST_URI=/landnblog/category/create
+in /var/www/html/landnblog/protected/views/category/create.php (33)
+in /var/www/html/landnblog/protected/controllers/CategoryController.php (57)
+in /var/www/html/landnblog/index.php (13)
+2016/06/21 09:20:05 [error] [exception.CException] exception 'CException' with message 'Property "Category.alias" is not defined.' in /var/www/html/landnblog/framework/base/CComponent.php:173
+Stack trace:
+#0 /var/www/html/landnblog/framework/db/ar/CActiveRecord.php(161): CComponent->__set('alias', '0')
+#1 /var/www/html/landnblog/protected/controllers/CategoryController.php(16): CActiveRecord->__set('alias', '0')
+#2 /var/www/html/landnblog/framework/web/actions/CInlineAction.php(49): CategoryController->actionCreate()
+#3 /var/www/html/landnblog/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /var/www/html/landnblog/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /var/www/html/landnblog/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /var/www/html/landnblog/framework/web/CWebApplication.php(282): CController->run('create')
+#7 /var/www/html/landnblog/framework/web/CWebApplication.php(141): CWebApplication->runController('category/create')
+#8 /var/www/html/landnblog/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#9 /var/www/html/landnblog/index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/landnblog/category/create
+HTTP_REFERER=http://localhost/landnblog/category/create
+---
+2016/06/21 09:20:25 [error] [exception.CException] exception 'CException' with message 'Property "Category.parent_category" is not defined.' in /var/www/html/landnblog/framework/base/CComponent.php:173
+Stack trace:
+#0 /var/www/html/landnblog/framework/db/ar/CActiveRecord.php(161): CComponent->__set('parent_category', '0')
+#1 /var/www/html/landnblog/protected/controllers/CategoryController.php(16): CActiveRecord->__set('parent_category', '0')
+#2 /var/www/html/landnblog/framework/web/actions/CInlineAction.php(49): CategoryController->actionCreate()
+#3 /var/www/html/landnblog/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /var/www/html/landnblog/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /var/www/html/landnblog/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /var/www/html/landnblog/framework/web/CWebApplication.php(282): CController->run('create')
+#7 /var/www/html/landnblog/framework/web/CWebApplication.php(141): CWebApplication->runController('category/create')
+#8 /var/www/html/landnblog/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#9 /var/www/html/landnblog/index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/landnblog/category/create
+HTTP_REFERER=http://localhost/landnblog/category/create
+---
+2016/06/21 09:32:06 [error] [php] Non-static method Category::tree() should not be called statically, assuming $this from incompatible context (/var/www/html/landnblog/protected/views/category/admin.php:10)
+Stack trace:
+#0 /var/www/html/landnblog/framework/web/CController.php(869): CategoryController->renderFile()
+#1 /var/www/html/landnblog/framework/web/CController.php(782): CategoryController->renderPartial()
+#2 /var/www/html/landnblog/protected/controllers/CategoryController.php(7): CategoryController->render()
+#3 /var/www/html/landnblog/framework/web/actions/CInlineAction.php(49): CategoryController->actionAdmin()
+#4 /var/www/html/landnblog/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /var/www/html/landnblog/framework/web/CController.php(286): CategoryController->runAction()
+#6 /var/www/html/landnblog/framework/web/CController.php(265): CategoryController->runActionWithFilters()
+#7 /var/www/html/landnblog/framework/web/CWebApplication.php(282): CategoryController->run()
+#8 /var/www/html/landnblog/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/html/landnblog/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /var/www/html/landnblog/index.php(13): CWebApplication->run()
+REQUEST_URI=/landnblog/category/admin/6
+in /var/www/html/landnblog/protected/views/category/admin.php (10)
+in /var/www/html/landnblog/protected/controllers/CategoryController.php (7)
+in /var/www/html/landnblog/index.php (13)
+2016/06/21 12:18:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "edit".' in /var/www/html/landnblog/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/landnblog/framework/web/CController.php(270): CController->missingAction('edit')
+#1 /var/www/html/landnblog/framework/web/CWebApplication.php(282): CController->run('edit')
+#2 /var/www/html/landnblog/framework/web/CWebApplication.php(141): CWebApplication->runController('category/edit')
+#3 /var/www/html/landnblog/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /var/www/html/landnblog/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/landnblog/category/edit
+HTTP_REFERER=http://localhost/landnblog/category/admin/6
+---
+2016/06/21 12:21:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "edit".' in /var/www/html/landnblog/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/landnblog/framework/web/CController.php(270): CController->missingAction('edit')
+#1 /var/www/html/landnblog/framework/web/CWebApplication.php(282): CController->run('edit')
+#2 /var/www/html/landnblog/framework/web/CWebApplication.php(141): CWebApplication->runController('category/edit')
+#3 /var/www/html/landnblog/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /var/www/html/landnblog/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/landnblog/category/edit
+HTTP_REFERER=http://localhost/landnblog/category/admin/6
+---
+2016/06/21 15:52:41 [error] [php] array_reverse() expects parameter 1 to be array, null given (/var/www/html/landnblog/protected/models/Category.php:51)
+Stack trace:
+#0 /var/www/html/landnblog/framework/web/CBaseController.php(126): require()
+#1 /var/www/html/landnblog/framework/web/CBaseController.php(95): CategoryController->renderInternal()
+#2 /var/www/html/landnblog/framework/web/CController.php(869): CategoryController->renderFile()
+#3 /var/www/html/landnblog/framework/web/CController.php(782): CategoryController->renderPartial()
+#4 /var/www/html/landnblog/protected/controllers/CategoryController.php(7): CategoryController->render()
+#5 /var/www/html/landnblog/framework/web/actions/CInlineAction.php(49): CategoryController->actionAdmin()
+#6 /var/www/html/landnblog/framework/web/CController.php(308): CInlineAction->runWithParams()
+#7 /var/www/html/landnblog/framework/web/CController.php(286): CategoryController->runAction()
+#8 /var/www/html/landnblog/framework/web/CController.php(265): CategoryController->runActionWithFilters()
+#9 /var/www/html/landnblog/framework/web/CWebApplication.php(282): CategoryController->run()
+#10 /var/www/html/landnblog/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#11 /var/www/html/landnblog/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#12 /var/www/html/landnblog/index.php(13): CWebApplication->run()
+REQUEST_URI=/landnblog/category/admin
+in /var/www/html/landnblog/protected/models/Category.php (51)
+in /var/www/html/landnblog/protected/views/category/admin.php (12)
+in /var/www/html/landnblog/protected/controllers/CategoryController.php (7)
+2016/06/21 16:50:09 [error] [php] Invalid argument supplied for foreach() (/var/www/html/landnblog/protected/views/category/admin.php:11)
+Stack trace:
+#0 /var/www/html/landnblog/framework/web/CController.php(869): CategoryController->renderFile()
+#1 /var/www/html/landnblog/framework/web/CController.php(782): CategoryController->renderPartial()
+#2 /var/www/html/landnblog/protected/controllers/CategoryController.php(7): CategoryController->render()
+#3 /var/www/html/landnblog/framework/web/actions/CInlineAction.php(49): CategoryController->actionAdmin()
+#4 /var/www/html/landnblog/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /var/www/html/landnblog/framework/web/CController.php(286): CategoryController->runAction()
+#6 /var/www/html/landnblog/framework/web/CController.php(265): CategoryController->runActionWithFilters()
+#7 /var/www/html/landnblog/framework/web/CWebApplication.php(282): CategoryController->run()
+#8 /var/www/html/landnblog/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/html/landnblog/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /var/www/html/landnblog/index.php(13): CWebApplication->run()
+REQUEST_URI=/landnblog/category/admin
+in /var/www/html/landnblog/protected/views/category/admin.php (11)
+in /var/www/html/landnblog/protected/controllers/CategoryController.php (7)
+in /var/www/html/landnblog/index.php (13)
+2016/06/22 08:46:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "admon".' in /var/www/html/landnblog/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/landnblog/framework/web/CController.php(270): CController->missingAction('admon')
+#1 /var/www/html/landnblog/framework/web/CWebApplication.php(282): CController->run('admon')
+#2 /var/www/html/landnblog/framework/web/CWebApplication.php(141): CWebApplication->runController('category/admon')
+#3 /var/www/html/landnblog/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /var/www/html/landnblog/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/landnblog/category/admon
+---
+2016/06/22 08:53:12 [error] [php] array_multisort(): Array sizes are inconsistent (/var/www/html/landnblog/protected/controllers/CategoryController.php:36)
+Stack trace:
+#0 /var/www/html/landnblog/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /var/www/html/landnblog/framework/web/CController.php(286): CategoryController->runAction()
+#2 /var/www/html/landnblog/framework/web/CController.php(265): CategoryController->runActionWithFilters()
+#3 /var/www/html/landnblog/framework/web/CWebApplication.php(282): CategoryController->run()
+#4 /var/www/html/landnblog/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /var/www/html/landnblog/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#6 /var/www/html/landnblog/index.php(13): CWebApplication->run()
+REQUEST_URI=/landnblog/category/test
+in /var/www/html/landnblog/protected/controllers/CategoryController.php (36)
+in /var/www/html/landnblog/index.php (13)
+2016/06/22 08:53:20 [error] [php] array_multisort(): Array sizes are inconsistent (/var/www/html/landnblog/protected/controllers/CategoryController.php:36)
+Stack trace:
+#0 /var/www/html/landnblog/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /var/www/html/landnblog/framework/web/CController.php(286): CategoryController->runAction()
+#2 /var/www/html/landnblog/framework/web/CController.php(265): CategoryController->runActionWithFilters()
+#3 /var/www/html/landnblog/framework/web/CWebApplication.php(282): CategoryController->run()
+#4 /var/www/html/landnblog/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /var/www/html/landnblog/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#6 /var/www/html/landnblog/index.php(13): CWebApplication->run()
+REQUEST_URI=/landnblog/category/test
+in /var/www/html/landnblog/protected/controllers/CategoryController.php (36)
+in /var/www/html/landnblog/index.php (13)
+2016/06/22 08:53:31 [error] [php] array_multisort(): Array sizes are inconsistent (/var/www/html/landnblog/protected/controllers/CategoryController.php:36)
+Stack trace:
+#0 /var/www/html/landnblog/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /var/www/html/landnblog/framework/web/CController.php(286): CategoryController->runAction()
+#2 /var/www/html/landnblog/framework/web/CController.php(265): CategoryController->runActionWithFilters()
+#3 /var/www/html/landnblog/framework/web/CWebApplication.php(282): CategoryController->run()
+#4 /var/www/html/landnblog/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /var/www/html/landnblog/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#6 /var/www/html/landnblog/index.php(13): CWebApplication->run()
+REQUEST_URI=/landnblog/category/test
+in /var/www/html/landnblog/protected/controllers/CategoryController.php (36)
+in /var/www/html/landnblog/index.php (13)
+2016/06/22 08:56:34 [error] [php] array_multisort(): Array sizes are inconsistent (/var/www/html/landnblog/protected/controllers/CategoryController.php:36)
+Stack trace:
+#0 /var/www/html/landnblog/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /var/www/html/landnblog/framework/web/CController.php(286): CategoryController->runAction()
+#2 /var/www/html/landnblog/framework/web/CController.php(265): CategoryController->runActionWithFilters()
+#3 /var/www/html/landnblog/framework/web/CWebApplication.php(282): CategoryController->run()
+#4 /var/www/html/landnblog/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /var/www/html/landnblog/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#6 /var/www/html/landnblog/index.php(13): CWebApplication->run()
+REQUEST_URI=/landnblog/category/test
+in /var/www/html/landnblog/protected/controllers/CategoryController.php (36)
+in /var/www/html/landnblog/index.php (13)
+2016/06/22 09:41:51 [error] [exception.CException] exception 'CException' with message 'Property "Category.title" is not defined.' in /var/www/html/landnblog/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/html/landnblog/framework/db/ar/CActiveRecord.php(145): CComponent->__get('title')
+#1 /var/www/html/landnblog/protected/controllers/CategoryController.php(99): CActiveRecord->__get('title')
+#2 /var/www/html/landnblog/framework/web/actions/CInlineAction.php(49): CategoryController->actionFoo()
+#3 /var/www/html/landnblog/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /var/www/html/landnblog/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /var/www/html/landnblog/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /var/www/html/landnblog/framework/web/CWebApplication.php(282): CController->run('Foo')
+#7 /var/www/html/landnblog/framework/web/CWebApplication.php(141): CWebApplication->runController('category/Foo')
+#8 /var/www/html/landnblog/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#9 /var/www/html/landnblog/index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/landnblog/category/Foo
+---
+2016/06/22 10:33:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "view".' in /var/www/html/landnblog/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/landnblog/framework/web/CController.php(270): CController->missingAction('view')
+#1 /var/www/html/landnblog/framework/web/CWebApplication.php(282): CController->run('view')
+#2 /var/www/html/landnblog/framework/web/CWebApplication.php(141): CWebApplication->runController('category/view')
+#3 /var/www/html/landnblog/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /var/www/html/landnblog/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/landnblog/category/4
+HTTP_REFERER=http://localhost/landnblog/category/Foo
+---
+2016/06/22 10:54:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "Foo".' in /var/www/html/landnblog/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/landnblog/framework/web/CController.php(270): CController->missingAction('Foo')
+#1 /var/www/html/landnblog/framework/web/CWebApplication.php(282): CController->run('Foo')
+#2 /var/www/html/landnblog/framework/web/CWebApplication.php(141): CWebApplication->runController('category/Foo')
+#3 /var/www/html/landnblog/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /var/www/html/landnblog/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/landnblog/category/Foo
+---
+2016/06/22 15:18:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "edit".' in /var/www/html/landnblog/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/landnblog/framework/web/CController.php(270): CController->missingAction('edit')
+#1 /var/www/html/landnblog/framework/web/CWebApplication.php(282): CController->run('edit')
+#2 /var/www/html/landnblog/framework/web/CWebApplication.php(141): CWebApplication->runController('category/edit')
+#3 /var/www/html/landnblog/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /var/www/html/landnblog/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/landnblog/category/edit
+HTTP_REFERER=http://localhost/landnblog/category/admin
+---
+2016/06/22 15:18:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "edit".' in /var/www/html/landnblog/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/landnblog/framework/web/CController.php(270): CController->missingAction('edit')
+#1 /var/www/html/landnblog/framework/web/CWebApplication.php(282): CController->run('edit')
+#2 /var/www/html/landnblog/framework/web/CWebApplication.php(141): CWebApplication->runController('category/edit')
+#3 /var/www/html/landnblog/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /var/www/html/landnblog/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/landnblog/category/edit
+HTTP_REFERER=http://localhost/landnblog/category/admin
+---
+2016/06/22 15:18:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "edit".' in /var/www/html/landnblog/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/landnblog/framework/web/CController.php(270): CController->missingAction('edit')
+#1 /var/www/html/landnblog/framework/web/CWebApplication.php(282): CController->run('edit')
+#2 /var/www/html/landnblog/framework/web/CWebApplication.php(141): CWebApplication->runController('category/edit')
+#3 /var/www/html/landnblog/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /var/www/html/landnblog/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/landnblog/category/edit/4
+HTTP_REFERER=http://localhost/landnblog/category/admin
+---
+2016/06/22 17:22:23 [error] [php] get_class() expects parameter 1 to be object, array given (/var/www/html/landnblog/protected/views/category/admin.php:23)
+Stack trace:
+#0 /var/www/html/landnblog/framework/web/CBaseController.php(95): CategoryController->renderInternal()
+#1 /var/www/html/landnblog/framework/web/CController.php(869): CategoryController->renderFile()
+#2 /var/www/html/landnblog/framework/web/CController.php(782): CategoryController->renderPartial()
+#3 /var/www/html/landnblog/protected/controllers/CategoryController.php(7): CategoryController->render()
+#4 /var/www/html/landnblog/framework/web/actions/CInlineAction.php(49): CategoryController->actionAdmin()
+#5 /var/www/html/landnblog/framework/web/CController.php(308): CInlineAction->runWithParams()
+#6 /var/www/html/landnblog/framework/web/CController.php(286): CategoryController->runAction()
+#7 /var/www/html/landnblog/framework/web/CController.php(265): CategoryController->runActionWithFilters()
+#8 /var/www/html/landnblog/framework/web/CWebApplication.php(282): CategoryController->run()
+#9 /var/www/html/landnblog/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#10 /var/www/html/landnblog/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#11 /var/www/html/landnblog/index.php(13): CWebApplication->run()
+REQUEST_URI=/landnblog/category/admin
+in /var/www/html/landnblog/protected/views/category/admin.php (23)
+in /var/www/html/landnblog/protected/controllers/CategoryController.php (7)
+in /var/www/html/landnblog/index.php (13)
+2016/06/23 12:31:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "create".' in /var/www/html/landnblog/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/landnblog/framework/web/CController.php(270): CController->missingAction('create')
+#1 /var/www/html/landnblog/framework/web/CWebApplication.php(282): CController->run('create')
+#2 /var/www/html/landnblog/framework/web/CWebApplication.php(141): CWebApplication->runController('article/create')
+#3 /var/www/html/landnblog/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /var/www/html/landnblog/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/landnblog/article/create
+HTTP_REFERER=http://localhost/landnblog/article/admin
+---
+2016/06/23 12:36:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "create".' in /var/www/html/landnblog/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/landnblog/framework/web/CController.php(270): CController->missingAction('create')
+#1 /var/www/html/landnblog/framework/web/CWebApplication.php(282): CController->run('create')
+#2 /var/www/html/landnblog/framework/web/CWebApplication.php(141): CWebApplication->runController('article/create')
+#3 /var/www/html/landnblog/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /var/www/html/landnblog/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/landnblog/article/create
+HTTP_REFERER=http://localhost/landnblog/article/admin
+---
+2016/06/23 14:47:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "static/select2/select2/css/select2.min.css".' in /var/www/html/landnblog/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/html/landnblog/framework/web/CWebApplication.php(141): CWebApplication->runController('static/select2/...')
+#1 /var/www/html/landnblog/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /var/www/html/landnblog/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/landnblog/static/select2/select2/css/select2.min.css
+HTTP_REFERER=http://localhost/landnblog/article/create
+---
+2016/06/23 14:47:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "static/select2/select2/css/select2.min.css".' in /var/www/html/landnblog/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/html/landnblog/framework/web/CWebApplication.php(141): CWebApplication->runController('static/select2/...')
+#1 /var/www/html/landnblog/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /var/www/html/landnblog/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/landnblog/static/select2/select2/css/select2.min.css
+HTTP_REFERER=http://localhost/landnblog/article/create
+---
+2016/06/24 10:35:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "static/wow/css/animate.css".' in /var/www/html/landnblog/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/html/landnblog/framework/web/CWebApplication.php(141): CWebApplication->runController('static/wow/css/...')
+#1 /var/www/html/landnblog/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /var/www/html/landnblog/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/landnblog/static/wow/css/animate.css
+HTTP_REFERER=http://localhost/landnblog/index
+---
+2016/06/24 10:35:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "static/wow/js/wow.min.js".' in /var/www/html/landnblog/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/html/landnblog/framework/web/CWebApplication.php(141): CWebApplication->runController('static/wow/js/w...')
+#1 /var/www/html/landnblog/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /var/www/html/landnblog/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/landnblog/static/wow/js/wow.min.js
+HTTP_REFERER=http://localhost/landnblog/index
+---
+2016/06/24 10:35:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "static/wow/js/wow.min.js".' in /var/www/html/landnblog/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/html/landnblog/framework/web/CWebApplication.php(141): CWebApplication->runController('static/wow/js/w...')
+#1 /var/www/html/landnblog/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /var/www/html/landnblog/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/landnblog/static/wow/js/wow.min.js
+HTTP_REFERER=http://localhost/landnblog/index
+---
+2016/06/24 10:35:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "static/wow/css/animate.css".' in /var/www/html/landnblog/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/html/landnblog/framework/web/CWebApplication.php(141): CWebApplication->runController('static/wow/css/...')
+#1 /var/www/html/landnblog/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /var/www/html/landnblog/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/landnblog/static/wow/css/animate.css
+HTTP_REFERER=http://localhost/landnblog/index
+---
+2016/06/24 10:35:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "static/wow/js/wow.min.js".' in /var/www/html/landnblog/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/html/landnblog/framework/web/CWebApplication.php(141): CWebApplication->runController('static/wow/js/w...')
+#1 /var/www/html/landnblog/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /var/www/html/landnblog/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/landnblog/static/wow/js/wow.min.js
+HTTP_REFERER=http://localhost/landnblog/index
+---
+2016/06/24 10:35:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "static/wow/js/wow.min.js".' in /var/www/html/landnblog/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/html/landnblog/framework/web/CWebApplication.php(141): CWebApplication->runController('static/wow/js/w...')
+#1 /var/www/html/landnblog/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /var/www/html/landnblog/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/landnblog/static/wow/js/wow.min.js
+HTTP_REFERER=http://localhost/landnblog/index
+---
+2016/06/24 10:36:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "static/wow/css/animate.css".' in /var/www/html/landnblog/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/html/landnblog/framework/web/CWebApplication.php(141): CWebApplication->runController('static/wow/css/...')
+#1 /var/www/html/landnblog/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /var/www/html/landnblog/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/landnblog/static/wow/css/animate.css
+HTTP_REFERER=http://localhost/landnblog/index
+---
+2016/06/24 11:56:53 [error] [exception.CException] exception 'CException' with message 'Property "Article.name" is not defined.' in /var/www/html/landnblog/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/html/landnblog/framework/db/ar/CActiveRecord.php(145): CComponent->__get('name')
+#1 /var/www/html/landnblog/protected/views/article/edit.php(1): CActiveRecord->__get('name')
+#2 /var/www/html/landnblog/framework/web/CBaseController.php(126): require('/var/www/html/l...')
+#3 /var/www/html/landnblog/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/l...', Array, true)
+#4 /var/www/html/landnblog/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/l...', Array, true)
+#5 /var/www/html/landnblog/framework/web/CController.php(782): CController->renderPartial('edit', Array, true)
+#6 /var/www/html/landnblog/protected/controllers/ArticleController.php(90): CController->render('edit', Array)
+#7 [internal function]: ArticleController->actionEdit('2')
+#8 /var/www/html/landnblog/framework/web/actions/CAction.php(109): ReflectionMethod->invokeArgs(Object(ArticleController), Array)
+#9 /var/www/html/landnblog/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(ArticleController), Object(ReflectionMethod), Array)
+#10 /var/www/html/landnblog/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#11 /var/www/html/landnblog/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#12 /var/www/html/landnblog/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /var/www/html/landnblog/framework/web/CWebApplication.php(282): CController->run('edit')
+#14 /var/www/html/landnblog/framework/web/CWebApplication.php(141): CWebApplication->runController('article/edit')
+#15 /var/www/html/landnblog/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#16 /var/www/html/landnblog/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/landnblog/article/edit/2
+HTTP_REFERER=http://localhost/landnblog/article/admin
+---
+2016/06/24 12:32:43 [error] [php] date() expects parameter 2 to be long, string given (/var/www/html/landnblog/protected/views/article/admin.php:29)
+Stack trace:
+#0 /var/www/html/landnblog/framework/web/CBaseController.php(95): ArticleController->renderInternal()
+#1 /var/www/html/landnblog/framework/web/CController.php(869): ArticleController->renderFile()
+#2 /var/www/html/landnblog/framework/web/CController.php(782): ArticleController->renderPartial()
+#3 /var/www/html/landnblog/protected/controllers/ArticleController.php(20): ArticleController->render()
+#4 /var/www/html/landnblog/framework/web/actions/CInlineAction.php(49): ArticleController->actionAdmin()
+#5 /var/www/html/landnblog/framework/web/CController.php(308): CInlineAction->runWithParams()
+#6 /var/www/html/landnblog/framework/web/CController.php(286): ArticleController->runAction()
+#7 /var/www/html/landnblog/framework/web/CController.php(265): ArticleController->runActionWithFilters()
+#8 /var/www/html/landnblog/framework/web/CWebApplication.php(282): ArticleController->run()
+#9 /var/www/html/landnblog/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#10 /var/www/html/landnblog/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#11 /var/www/html/landnblog/index.php(13): CWebApplication->run()
+REQUEST_URI=/landnblog/article/admin
+in /var/www/html/landnblog/protected/views/article/admin.php (29)
+in /var/www/html/landnblog/protected/controllers/ArticleController.php (20)
+in /var/www/html/landnblog/index.php (13)
+2016/06/24 12:43:25 [error] [exception.CException] exception 'CException' with message 'Property "Article.name" is not defined.' in /var/www/html/landnblog/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/html/landnblog/framework/db/ar/CActiveRecord.php(145): CComponent->__get('name')
+#1 /var/www/html/landnblog/protected/views/article/edit.php(1): CActiveRecord->__get('name')
+#2 /var/www/html/landnblog/framework/web/CBaseController.php(126): require('/var/www/html/l...')
+#3 /var/www/html/landnblog/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/l...', Array, true)
+#4 /var/www/html/landnblog/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/l...', Array, true)
+#5 /var/www/html/landnblog/framework/web/CController.php(782): CController->renderPartial('edit', Array, true)
+#6 /var/www/html/landnblog/protected/controllers/ArticleController.php(90): CController->render('edit', Array)
+#7 [internal function]: ArticleController->actionEdit('2')
+#8 /var/www/html/landnblog/framework/web/actions/CAction.php(109): ReflectionMethod->invokeArgs(Object(ArticleController), Array)
+#9 /var/www/html/landnblog/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(ArticleController), Object(ReflectionMethod), Array)
+#10 /var/www/html/landnblog/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#11 /var/www/html/landnblog/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#12 /var/www/html/landnblog/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /var/www/html/landnblog/framework/web/CWebApplication.php(282): CController->run('edit')
+#14 /var/www/html/landnblog/framework/web/CWebApplication.php(141): CWebApplication->runController('article/edit')
+#15 /var/www/html/landnblog/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#16 /var/www/html/landnblog/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/landnblog/article/edit/2
+HTTP_REFERER=http://localhost/landnblog/article/admin
+---
+2016/06/24 12:53:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "view".' in /var/www/html/landnblog/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/landnblog/framework/web/CController.php(270): CController->missingAction('view')
+#1 /var/www/html/landnblog/framework/web/CWebApplication.php(282): CController->run('view')
+#2 /var/www/html/landnblog/framework/web/CWebApplication.php(141): CWebApplication->runController('article/view')
+#3 /var/www/html/landnblog/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /var/www/html/landnblog/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/landnblog/article/view/3
+HTTP_REFERER=http://localhost/landnblog/article/admin
+---
+2016/06/24 12:54:12 [error] [exception.CException] exception 'CException' with message 'Property "Article.name" is not defined.' in /var/www/html/landnblog/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/html/landnblog/framework/db/ar/CActiveRecord.php(145): CComponent->__get('name')
+#1 /var/www/html/landnblog/protected/views/article/edit.php(1): CActiveRecord->__get('name')
+#2 /var/www/html/landnblog/framework/web/CBaseController.php(126): require('/var/www/html/l...')
+#3 /var/www/html/landnblog/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/l...', Array, true)
+#4 /var/www/html/landnblog/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/l...', Array, true)
+#5 /var/www/html/landnblog/framework/web/CController.php(782): CController->renderPartial('edit', Array, true)
+#6 /var/www/html/landnblog/protected/controllers/ArticleController.php(90): CController->render('edit', Array)
+#7 [internal function]: ArticleController->actionEdit('3')
+#8 /var/www/html/landnblog/framework/web/actions/CAction.php(109): ReflectionMethod->invokeArgs(Object(ArticleController), Array)
+#9 /var/www/html/landnblog/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(ArticleController), Object(ReflectionMethod), Array)
+#10 /var/www/html/landnblog/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#11 /var/www/html/landnblog/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#12 /var/www/html/landnblog/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /var/www/html/landnblog/framework/web/CWebApplication.php(282): CController->run('edit')
+#14 /var/www/html/landnblog/framework/web/CWebApplication.php(141): CWebApplication->runController('article/edit')
+#15 /var/www/html/landnblog/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#16 /var/www/html/landnblog/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/landnblog/article/edit/3
+HTTP_REFERER=http://localhost/landnblog/article/admin
+---
+2016/06/24 12:59:33 [error] [exception.CException] exception 'CException' with message 'Property "Article.wysiwyg" is not defined.' in /var/www/html/landnblog/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/html/landnblog/framework/db/ar/CActiveRecord.php(145): CComponent->__get('wysiwyg')
+#1 /var/www/html/landnblog/protected/views/article/edit.php(45): CActiveRecord->__get('wysiwyg')
+#2 /var/www/html/landnblog/framework/web/CBaseController.php(126): require('/var/www/html/l...')
+#3 /var/www/html/landnblog/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/l...', Array, true)
+#4 /var/www/html/landnblog/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/l...', Array, true)
+#5 /var/www/html/landnblog/framework/web/CController.php(782): CController->renderPartial('edit', Array, true)
+#6 /var/www/html/landnblog/protected/controllers/ArticleController.php(90): CController->render('edit', Array)
+#7 [internal function]: ArticleController->actionEdit('2')
+#8 /var/www/html/landnblog/framework/web/actions/CAction.php(109): ReflectionMethod->invokeArgs(Object(ArticleController), Array)
+#9 /var/www/html/landnblog/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(ArticleController), Object(ReflectionMethod), Array)
+#10 /var/www/html/landnblog/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#11 /var/www/html/landnblog/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#12 /var/www/html/landnblog/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /var/www/html/landnblog/framework/web/CWebApplication.php(282): CController->run('edit')
+#14 /var/www/html/landnblog/framework/web/CWebApplication.php(141): CWebApplication->runController('article/edit')
+#15 /var/www/html/landnblog/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#16 /var/www/html/landnblog/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/landnblog/article/edit/2
+HTTP_REFERER=http://localhost/landnblog/article/admin
+---
+2016/06/24 13:31:44 [error] [exception.CException] exception 'CException' with message 'Property "Article.name" is not defined.' in /var/www/html/landnblog/framework/base/CComponent.php:173
+Stack trace:
+#0 /var/www/html/landnblog/framework/db/ar/CActiveRecord.php(161): CComponent->__set('name', NULL)
+#1 /var/www/html/landnblog/protected/controllers/ArticleController.php(73): CActiveRecord->__set('name', NULL)
+#2 [internal function]: ArticleController->actionEdit('3')
+#3 /var/www/html/landnblog/framework/web/actions/CAction.php(109): ReflectionMethod->invokeArgs(Object(ArticleController), Array)
+#4 /var/www/html/landnblog/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(ArticleController), Object(ReflectionMethod), Array)
+#5 /var/www/html/landnblog/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /var/www/html/landnblog/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#7 /var/www/html/landnblog/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/html/landnblog/framework/web/CWebApplication.php(282): CController->run('edit')
+#9 /var/www/html/landnblog/framework/web/CWebApplication.php(141): CWebApplication->runController('article/edit')
+#10 /var/www/html/landnblog/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#11 /var/www/html/landnblog/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/landnblog/article/edit/3
+HTTP_REFERER=http://localhost/landnblog/article/edit/3
+---
+2016/06/24 13:44:28 [error] [exception.CException] exception 'CException' with message 'Property "Article.name" is not defined.' in /var/www/html/landnblog/framework/base/CComponent.php:173
+Stack trace:
+#0 /var/www/html/landnblog/framework/db/ar/CActiveRecord.php(161): CComponent->__set('name', NULL)
+#1 /var/www/html/landnblog/protected/controllers/ArticleController.php(73): CActiveRecord->__set('name', NULL)
+#2 [internal function]: ArticleController->actionEdit('1')
+#3 /var/www/html/landnblog/framework/web/actions/CAction.php(109): ReflectionMethod->invokeArgs(Object(ArticleController), Array)
+#4 /var/www/html/landnblog/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(ArticleController), Object(ReflectionMethod), Array)
+#5 /var/www/html/landnblog/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /var/www/html/landnblog/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#7 /var/www/html/landnblog/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/html/landnblog/framework/web/CWebApplication.php(282): CController->run('edit')
+#9 /var/www/html/landnblog/framework/web/CWebApplication.php(141): CWebApplication->runController('article/edit')
+#10 /var/www/html/landnblog/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#11 /var/www/html/landnblog/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/landnblog/article/edit/1
+HTTP_REFERER=http://localhost/landnblog/article/edit/1
+---
+2016/06/24 13:45:19 [error] [php] Invalid argument supplied for foreach() (/var/www/html/landnblog/protected/controllers/ArticleController.php:48)
+Stack trace:
+#0 /var/www/html/landnblog/framework/web/CController.php(286): ArticleController->runAction()
+#1 /var/www/html/landnblog/framework/web/CController.php(265): ArticleController->runActionWithFilters()
+#2 /var/www/html/landnblog/framework/web/CWebApplication.php(282): ArticleController->run()
+#3 /var/www/html/landnblog/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /var/www/html/landnblog/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /var/www/html/landnblog/index.php(13): CWebApplication->run()
+REQUEST_URI=/landnblog/article/create
+in /var/www/html/landnblog/protected/controllers/ArticleController.php (48)
+in /var/www/html/landnblog/index.php (13)
+2016/06/24 13:49:00 [error] [php] date() expects parameter 2 to be long, string given (/var/www/html/landnblog/protected/views/article/admin.php:30)
+Stack trace:
+#0 /var/www/html/landnblog/framework/web/CBaseController.php(95): ArticleController->renderInternal()
+#1 /var/www/html/landnblog/framework/web/CController.php(869): ArticleController->renderFile()
+#2 /var/www/html/landnblog/framework/web/CController.php(782): ArticleController->renderPartial()
+#3 /var/www/html/landnblog/protected/controllers/ArticleController.php(20): ArticleController->render()
+#4 /var/www/html/landnblog/framework/web/actions/CInlineAction.php(49): ArticleController->actionAdmin()
+#5 /var/www/html/landnblog/framework/web/CController.php(308): CInlineAction->runWithParams()
+#6 /var/www/html/landnblog/framework/web/CController.php(286): ArticleController->runAction()
+#7 /var/www/html/landnblog/framework/web/CController.php(265): ArticleController->runActionWithFilters()
+#8 /var/www/html/landnblog/framework/web/CWebApplication.php(282): ArticleController->run()
+#9 /var/www/html/landnblog/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#10 /var/www/html/landnblog/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#11 /var/www/html/landnblog/index.php(13): CWebApplication->run()
+REQUEST_URI=/landnblog/article/admin
+in /var/www/html/landnblog/protected/views/article/admin.php (30)
+in /var/www/html/landnblog/protected/controllers/ArticleController.php (20)
+in /var/www/html/landnblog/index.php (13)
+2016/06/24 14:18:07 [error] [php] date() expects parameter 2 to be long, string given (/var/www/html/landnblog/protected/views/article/admin.php:30)
+Stack trace:
+#0 /var/www/html/landnblog/framework/web/CBaseController.php(95): ArticleController->renderInternal()
+#1 /var/www/html/landnblog/framework/web/CController.php(869): ArticleController->renderFile()
+#2 /var/www/html/landnblog/framework/web/CController.php(782): ArticleController->renderPartial()
+#3 /var/www/html/landnblog/protected/controllers/ArticleController.php(20): ArticleController->render()
+#4 /var/www/html/landnblog/framework/web/actions/CInlineAction.php(49): ArticleController->actionAdmin()
+#5 /var/www/html/landnblog/framework/web/CController.php(308): CInlineAction->runWithParams()
+#6 /var/www/html/landnblog/framework/web/CController.php(286): ArticleController->runAction()
+#7 /var/www/html/landnblog/framework/web/CController.php(265): ArticleController->runActionWithFilters()
+#8 /var/www/html/landnblog/framework/web/CWebApplication.php(282): ArticleController->run()
+#9 /var/www/html/landnblog/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#10 /var/www/html/landnblog/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#11 /var/www/html/landnblog/index.php(13): CWebApplication->run()
+REQUEST_URI=/landnblog/article/admin
+in /var/www/html/landnblog/protected/views/article/admin.php (30)
+in /var/www/html/landnblog/protected/controllers/ArticleController.php (20)
+in /var/www/html/landnblog/index.php (13)
+2016/06/24 14:18:42 [error] [php] date() expects parameter 2 to be long, string given (/var/www/html/landnblog/protected/views/article/edit.php:37)
+Stack trace:
+#0 /var/www/html/landnblog/framework/web/CBaseController.php(95): ArticleController->renderInternal()
+#1 /var/www/html/landnblog/framework/web/CController.php(869): ArticleController->renderFile()
+#2 /var/www/html/landnblog/framework/web/CController.php(782): ArticleController->renderPartial()
+#3 /var/www/html/landnblog/protected/controllers/ArticleController.php(93): ArticleController->render()
+#4 unknown(0): ArticleController->actionEdit()
+#5 /var/www/html/landnblog/framework/web/actions/CAction.php(109): ReflectionMethod->invokeArgs()
+#6 /var/www/html/landnblog/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#7 /var/www/html/landnblog/framework/web/CController.php(308): CInlineAction->runWithParams()
+#8 /var/www/html/landnblog/framework/web/CController.php(286): ArticleController->runAction()
+#9 /var/www/html/landnblog/framework/web/CController.php(265): ArticleController->runActionWithFilters()
+#10 /var/www/html/landnblog/framework/web/CWebApplication.php(282): ArticleController->run()
+#11 /var/www/html/landnblog/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#12 /var/www/html/landnblog/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#13 /var/www/html/landnblog/index.php(13): CWebApplication->run()
+REQUEST_URI=/landnblog/article/edit/4
+in /var/www/html/landnblog/protected/views/article/edit.php (37)
+in /var/www/html/landnblog/protected/controllers/ArticleController.php (93)
+in /var/www/html/landnblog/index.php (13)
+2016/06/24 14:18:47 [error] [php] date() expects parameter 2 to be long, string given (/var/www/html/landnblog/protected/views/article/edit.php:37)
+Stack trace:
+#0 /var/www/html/landnblog/framework/web/CBaseController.php(95): ArticleController->renderInternal()
+#1 /var/www/html/landnblog/framework/web/CController.php(869): ArticleController->renderFile()
+#2 /var/www/html/landnblog/framework/web/CController.php(782): ArticleController->renderPartial()
+#3 /var/www/html/landnblog/protected/controllers/ArticleController.php(93): ArticleController->render()
+#4 unknown(0): ArticleController->actionEdit()
+#5 /var/www/html/landnblog/framework/web/actions/CAction.php(109): ReflectionMethod->invokeArgs()
+#6 /var/www/html/landnblog/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#7 /var/www/html/landnblog/framework/web/CController.php(308): CInlineAction->runWithParams()
+#8 /var/www/html/landnblog/framework/web/CController.php(286): ArticleController->runAction()
+#9 /var/www/html/landnblog/framework/web/CController.php(265): ArticleController->runActionWithFilters()
+#10 /var/www/html/landnblog/framework/web/CWebApplication.php(282): ArticleController->run()
+#11 /var/www/html/landnblog/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#12 /var/www/html/landnblog/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#13 /var/www/html/landnblog/index.php(13): CWebApplication->run()
+REQUEST_URI=/landnblog/article/edit/4
+in /var/www/html/landnblog/protected/views/article/edit.php (37)
+in /var/www/html/landnblog/protected/controllers/ArticleController.php (93)
+in /var/www/html/landnblog/index.php (13)
+2016/06/24 14:19:31 [error] [exception.CException] exception 'CException' with message 'Property "Article.name" is not defined.' in /var/www/html/landnblog/framework/base/CComponent.php:173
+Stack trace:
+#0 /var/www/html/landnblog/framework/db/ar/CActiveRecord.php(161): CComponent->__set('name', NULL)
+#1 /var/www/html/landnblog/protected/controllers/ArticleController.php(76): CActiveRecord->__set('name', NULL)
+#2 [internal function]: ArticleController->actionEdit('4')
+#3 /var/www/html/landnblog/framework/web/actions/CAction.php(109): ReflectionMethod->invokeArgs(Object(ArticleController), Array)
+#4 /var/www/html/landnblog/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(ArticleController), Object(ReflectionMethod), Array)
+#5 /var/www/html/landnblog/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /var/www/html/landnblog/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#7 /var/www/html/landnblog/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/html/landnblog/framework/web/CWebApplication.php(282): CController->run('edit')
+#9 /var/www/html/landnblog/framework/web/CWebApplication.php(141): CWebApplication->runController('article/edit')
+#10 /var/www/html/landnblog/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#11 /var/www/html/landnblog/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/landnblog/article/edit/4
+HTTP_REFERER=http://localhost/landnblog/article/edit/4
+---
+2016/06/24 14:29:05 [error] [php] Non-static method CActiveRecord::deleteAllByAttributes() should not be called statically, assuming $this from incompatible context (/var/www/html/landnblog/protected/controllers/ArticleController.php:83)
+Stack trace:
+#0 /var/www/html/landnblog/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 /var/www/html/landnblog/framework/web/CController.php(308): CInlineAction->runWithParams()
+#2 /var/www/html/landnblog/framework/web/CController.php(286): ArticleController->runAction()
+#3 /var/www/html/landnblog/framework/web/CController.php(265): ArticleController->runActionWithFilters()
+#4 /var/www/html/landnblog/framework/web/CWebApplication.php(282): ArticleController->run()
+#5 /var/www/html/landnblog/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#6 /var/www/html/landnblog/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#7 /var/www/html/landnblog/index.php(13): CWebApplication->run()
+REQUEST_URI=/landnblog/article/edit/4
+in /var/www/html/landnblog/protected/controllers/ArticleController.php (83)
+in /var/www/html/landnblog/index.php (13)
+2016/06/24 14:47:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "view".' in /var/www/html/landnblog/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/landnblog/framework/web/CController.php(270): CController->missingAction('view')
+#1 /var/www/html/landnblog/framework/web/CWebApplication.php(282): CController->run('view')
+#2 /var/www/html/landnblog/framework/web/CWebApplication.php(141): CWebApplication->runController('article/view')
+#3 /var/www/html/landnblog/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /var/www/html/landnblog/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/landnblog/article/view/1
+HTTP_REFERER=http://localhost/landnblog/article/admin
+---
+2016/06/24 16:13:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "view".' in /var/www/html/landnblog/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/landnblog/framework/web/CController.php(270): CController->missingAction('view')
+#1 /var/www/html/landnblog/framework/web/CWebApplication.php(282): CController->run('view')
+#2 /var/www/html/landnblog/framework/web/CWebApplication.php(141): CWebApplication->runController('article/view')
+#3 /var/www/html/landnblog/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /var/www/html/landnblog/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/landnblog/article/view/3
+HTTP_REFERER=http://localhost/landnblog/article/admin
+---
+2016/06/24 16:26:16 [error] [exception.CException] exception 'CException' with message 'Property "Article.background" is not defined.' in /var/www/html/landnblog/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/html/landnblog/framework/db/ar/CActiveRecord.php(145): CComponent->__get('background')
+#1 /var/www/html/landnblog/protected/controllers/BlockController.php(135): CActiveRecord->__get('background')
+#2 /var/www/html/landnblog/framework/web/actions/CInlineAction.php(49): BlockController->actionItemDelete()
+#3 /var/www/html/landnblog/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /var/www/html/landnblog/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /var/www/html/landnblog/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /var/www/html/landnblog/framework/web/CWebApplication.php(282): CController->run('itemdelete')
+#7 /var/www/html/landnblog/framework/web/CWebApplication.php(141): CWebApplication->runController('block/itemdelet...')
+#8 /var/www/html/landnblog/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#9 /var/www/html/landnblog/index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/landnblog/block/itemdelete
+HTTP_REFERER=http://localhost/landnblog/article/admin
+---
+2016/06/24 16:29:12 [error] [exception.CException] exception 'CException' with message 'Property "Article.background" is not defined.' in /var/www/html/landnblog/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/html/landnblog/framework/db/ar/CActiveRecord.php(145): CComponent->__get('background')
+#1 /var/www/html/landnblog/protected/controllers/BlockController.php(135): CActiveRecord->__get('background')
+#2 /var/www/html/landnblog/framework/web/actions/CInlineAction.php(49): BlockController->actionItemDelete()
+#3 /var/www/html/landnblog/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /var/www/html/landnblog/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /var/www/html/landnblog/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /var/www/html/landnblog/framework/web/CWebApplication.php(282): CController->run('itemdelete')
+#7 /var/www/html/landnblog/framework/web/CWebApplication.php(141): CWebApplication->runController('block/itemdelet...')
+#8 /var/www/html/landnblog/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#9 /var/www/html/landnblog/index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/landnblog/block/itemdelete
+HTTP_REFERER=http://localhost/landnblog/article/admin
+---
+2016/06/24 16:30:32 [error] [exception.CException] exception 'CException' with message 'Property "Article.background" is not defined.' in /var/www/html/landnblog/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/html/landnblog/framework/db/ar/CActiveRecord.php(145): CComponent->__get('background')
+#1 /var/www/html/landnblog/protected/controllers/BlockController.php(135): CActiveRecord->__get('background')
+#2 /var/www/html/landnblog/framework/web/actions/CInlineAction.php(49): BlockController->actionItemDelete()
+#3 /var/www/html/landnblog/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /var/www/html/landnblog/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /var/www/html/landnblog/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /var/www/html/landnblog/framework/web/CWebApplication.php(282): CController->run('itemdelete')
+#7 /var/www/html/landnblog/framework/web/CWebApplication.php(141): CWebApplication->runController('block/itemdelet...')
+#8 /var/www/html/landnblog/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#9 /var/www/html/landnblog/index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/landnblog/block/itemdelete
+HTTP_REFERER=http://localhost/landnblog/article/admin
+---
+2016/06/24 16:31:43 [error] [exception.CException] exception 'CException' with message 'Property "Article.background" is not defined.' in /var/www/html/landnblog/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/html/landnblog/framework/db/ar/CActiveRecord.php(145): CComponent->__get('background')
+#1 /var/www/html/landnblog/protected/controllers/BlockController.php(135): CActiveRecord->__get('background')
+#2 /var/www/html/landnblog/framework/web/actions/CInlineAction.php(49): BlockController->actionItemDelete()
+#3 /var/www/html/landnblog/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /var/www/html/landnblog/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /var/www/html/landnblog/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /var/www/html/landnblog/framework/web/CWebApplication.php(282): CController->run('itemdelete')
+#7 /var/www/html/landnblog/framework/web/CWebApplication.php(141): CWebApplication->runController('block/itemdelet...')
+#8 /var/www/html/landnblog/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#9 /var/www/html/landnblog/index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/landnblog/block/itemdelete
+HTTP_REFERER=http://localhost/landnblog/article/admin
+---
+2016/06/24 16:33:32 [error] [exception.CException] exception 'CException' with message 'Property "Article.background" is not defined.' in /var/www/html/landnblog/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/html/landnblog/framework/db/ar/CActiveRecord.php(145): CComponent->__get('background')
+#1 /var/www/html/landnblog/protected/controllers/BlockController.php(135): CActiveRecord->__get('background')
+#2 /var/www/html/landnblog/framework/web/actions/CInlineAction.php(49): BlockController->actionItemDelete()
+#3 /var/www/html/landnblog/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /var/www/html/landnblog/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /var/www/html/landnblog/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /var/www/html/landnblog/framework/web/CWebApplication.php(282): CController->run('itemdelete')
+#7 /var/www/html/landnblog/framework/web/CWebApplication.php(141): CWebApplication->runController('block/itemdelet...')
+#8 /var/www/html/landnblog/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#9 /var/www/html/landnblog/index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/landnblog/block/itemdelete
+HTTP_REFERER=http://localhost/landnblog/article/admin
+---
+2016/06/24 16:34:04 [error] [exception.CException] exception 'CException' with message 'Property "Article.background" is not defined.' in /var/www/html/landnblog/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/html/landnblog/framework/db/ar/CActiveRecord.php(145): CComponent->__get('background')
+#1 /var/www/html/landnblog/protected/controllers/BlockController.php(135): CActiveRecord->__get('background')
+#2 /var/www/html/landnblog/framework/web/actions/CInlineAction.php(49): BlockController->actionItemDelete()
+#3 /var/www/html/landnblog/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /var/www/html/landnblog/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /var/www/html/landnblog/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /var/www/html/landnblog/framework/web/CWebApplication.php(282): CController->run('itemdelete')
+#7 /var/www/html/landnblog/framework/web/CWebApplication.php(141): CWebApplication->runController('block/itemdelet...')
+#8 /var/www/html/landnblog/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#9 /var/www/html/landnblog/index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/landnblog/block/itemdelete
+HTTP_REFERER=http://localhost/landnblog/article/admin
+---
