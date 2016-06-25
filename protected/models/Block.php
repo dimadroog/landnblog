@@ -70,6 +70,11 @@ class Block extends CActiveRecord
 		return $max;
 	}
 
+	public static function getByAlias($alias) {
+		$block = Block::model()->findByAttributes(array('alias' => $alias));
+		return $block;
+	}
+
 	/**
 	 * @return string the associated database table name
 	 */

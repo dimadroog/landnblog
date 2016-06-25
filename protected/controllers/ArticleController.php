@@ -2,22 +2,75 @@
 
 class ArticleController extends Controller
 {
+	public $layout='//layouts/article';
+	
 	public function actionIndex()
 	{
-		$this->render('index');
-	}
+        $cats = Category::model()->findAll();
+        $criteria=new CDbCriteria();
+        
+         if ($_GET['cat']) {
+            $cat = Category::model()->findByPk($_GET['cat']);
+            $art_cat = ArticleCategory::model()->findAllByAttributes(array('category_id' => $_GET['cat'] ));
+            $rel_article_ids = array();
+            foreach ($art_cat as $value) {
+            	$rel_article_ids[] = $value->article_id;
+            }
+            $criteria->addInCondition('id', $rel_article_ids);
+        }
+        $criteria->order = 'date DESC';
+        // $criteria->addSearchCondition('title', '%lorem%' , false,'OR');
+        // $criteria->addSearchCondition('content', '%lorem%' , false,'OR');
 
+        $count=Article::model()->count($criteria);
+        $pages=new CPagination($count);
+        $pages->pageSize=10;
+        $pages->applyLimit($criteria);
+        $articles=Article::model()->findAll($criteria);
+
+
+        $this->render('index', array(
+            'articles' => $articles,
+            'pages' => $pages,
+            'cats' => $cats,
+            'current_cat' => $cat,
+        ));
+	}
 
 	public function actionAdmin()
 	{
 		if (Yii::app()->user->name == 'admin' || Yii::app()->user->name == 'superadmin') {
-			$dataProvider = new CActiveDataProvider('Article', array(
-				'criteria'=>array(
-        			'order'=>'date DESC',
-    				),
-				));
-			$articles = $dataProvider->getData();
-			$this->render('admin',array('articles' => $articles));
+
+	        $cats = Category::model()->findAll();
+	        $criteria=new CDbCriteria();
+	        
+	         if ($_GET['cat']) {
+	            $cat = Category::model()->findByPk($_GET['cat']);
+	            $art_cat = ArticleCategory::model()->findAllByAttributes(array('category_id' => $_GET['cat'] ));
+	            $rel_article_ids = array();
+	            foreach ($art_cat as $value) {
+	            	$rel_article_ids[] = $value->article_id;
+	            }
+	            $criteria->addInCondition('id', $rel_article_ids);
+	        }
+            $criteria->order = 'date DESC';
+            // $criteria->addSearchCondition('title', '%lorem%' , false,'OR');
+            // $criteria->addSearchCondition('content', '%lorem%' , false,'OR');
+
+	        $count=Article::model()->count($criteria);
+	        $pages=new CPagination($count);
+	        $pages->pageSize=10;
+	        $pages->applyLimit($criteria);
+	        $articles=Article::model()->findAll($criteria);
+
+
+	        $this->render('admin', array(
+	            'articles' => $articles,
+	            'pages' => $pages,
+	            'cats' => $cats,
+	            'current_cat' => $cat,
+	        ));
+
 		} else {
 			// throw new CHttpException(403, 'У Вас нет прав для просмотра этой страницы.');
 			$this->redirect(array('site/login'));
@@ -110,9 +163,7 @@ class ArticleController extends Controller
 		if (Yii::app()->user->name == 'admin' || Yii::app()->user->name == 'superadmin') {
 			if ($_POST) {
 				$item = $_POST['classname']::model()->findByPk($_POST['item']);
-				// $item->delete();
-				$item->title = 'del';
-				$item->save();
+				$item->delete();
 			}
 		} else {
 			throw new CHttpException(403, 'У Вас нет прав для просмотра этой страницы.');

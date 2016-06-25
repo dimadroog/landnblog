@@ -1,5 +1,39 @@
 <?php /* @var $this Controller */ ?>
 <?php $this->beginContent('//layouts/main'); ?>
+<style type="text/css">
+    @media (min-width:768px) {    
+        body, h1, h2, h3, h4, h5, h6{
+            line-height: 1.7;
+        }
+
+        h1, h2, h3 {
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+        body{
+            font-size: 18px;
+        }
+        h1{
+            font-size: 50px;
+        }
+        h2{
+            font-size: 40px;
+        }
+        h3{
+            font-size: 30px;
+        }
+        h4{
+            font-size: 18px;
+        }
+        h5{
+            font-size: 16px;
+        }
+
+        h6{
+            font-size: 14px;
+        }
+    }
+</style>
 <!-- startbootstrap-scrolling-nav -->
 <link href="<?php echo Yii::app()->request->baseUrl; ?>/static/startbootstrap-scrolling-nav/css/scrolling-nav.css" rel="stylesheet">
 <nav class="navbar <?php echo Setting::getData('navbar_position'); ?> <?php echo Setting::getData('navbar_theme'); ?>"  role="navigation">
@@ -27,8 +61,11 @@
                     <?php endforeach;?>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
+                <?php if (Setting::getData('articles') == 1): ?>
+        				<li><a href="<?php echo Yii::app()->createUrl('/article/index'); ?>">Статьи</a></li>
+                <?php endif ?>
                     <?php if (Yii::app()->user->name == 'admin' || Yii::app()->user->name == 'superadmin'): ?>
-        				<li><a href="<?php echo Yii::app()->createUrl('/site/admin/'); ?>">Админка</a></li>
+                        <li><a href="<?php echo Yii::app()->createUrl('/site/admin/'); ?>">Админка</a></li>
                         <li><a href="<?php echo Yii::app()->createUrl('/site/logout'); ?>">Выйти</a></li>
                     <?php endif; ?>
                 </ul>

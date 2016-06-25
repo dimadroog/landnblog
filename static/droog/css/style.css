@@ -29,42 +29,9 @@
 /*///////////////////////////////////////*/
    
 body, h1, h2, h3, h4, h5, h6{
-    font-family: 'Roboto', sans-serif;
+    /*font-family: 'Roboto', sans-serif;*/
 }
 
-@media (min-width:768px) {    
-    body, h1, h2, h3, h4, h5, h6{
-        /*font-family: 'Roboto', sans-serif;*/
-        line-height: 1.7;
-    }
-
-    h1, h2, h3 {
-        margin-top: 25px;
-        margin-bottom: 15px;
-    }
-    body{
-        font-size: 18px;
-    }
-    h1{
-        font-size: 50px;
-    }
-    h2{
-        font-size: 40px;
-    }
-    h3{
-        font-size: 30px;
-    }
-    h4{
-        font-size: 18px;
-    }
-    h5{
-        font-size: 16px;
-    }
-
-    h6{
-        font-size: 14px;
-    }
-}
 @media (min-width:768px) {    
     .scrollup{
         width:40px;

@@ -33,7 +33,7 @@
             jQuery(document).ready(function() {
               jQuery('#datetimepicker').datetimepicker({
                   locale: 'ru',
-                  format: 'YYYY.MM.DD',
+                  format: 'DD.MM.YYYY',
                   // defaultDate: new Date(<?php echo date('Y, m, d, H, i', $item->date); ?>),
                   defaultDate: Date.now(),
               });

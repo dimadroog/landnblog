@@ -21,6 +21,9 @@
                 <ul class="nav navbar-nav">
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
+                    <?php if (Setting::getData('articles') == 1): ?>
+                            <li><a href="<?php echo Yii::app()->createUrl('/article/index'); ?>">Статьи</a></li>
+                    <?php endif ?>
                     <?php if (Yii::app()->user->name == 'admin' || Yii::app()->user->name == 'superadmin'): ?>
         				<li><a href="<?php echo Yii::app()->createUrl('/site/admin/'); ?>">Админка</a></li>
                         <li><a href="<?php echo Yii::app()->createUrl('/site/logout'); ?>">Выйти</a></li>

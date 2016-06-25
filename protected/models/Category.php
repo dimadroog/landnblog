@@ -59,7 +59,7 @@ class Category extends CActiveRecord
 	    }
 	}
 
-	public static function fullName($id){
+	public static function fullName($id, $root=false){
 		if ($id > 0) {
 			$cat = Category::model()->findByPk($id);
 			$str = '';
@@ -76,11 +76,24 @@ class Category extends CActiveRecord
 				$str .= implode(array_reverse($arr), ' > ');
 				$str .= ' > ';
 			}
-			return $str.$current_cat;
+			$result = $str.$current_cat;
 		} else {
-			return 'Корневая категория';
+			if ($root) {
+				$result = 'Корневая категория';
+			} else {
+				$result = '';
+			}
 		}
+		return $result;
 	}
+
+    public static function repeatLevelSymbol($lvl){        
+        $str = '';
+        for ($i=0; $i < $lvl+1; $i++) { 
+            $str .= '-&nbsp';
+        } 
+        return $str;
+    }
 
 
 	/**

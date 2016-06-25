@@ -4362,3 +4362,249 @@ Stack trace:
 REQUEST_URI=/landnblog/block/itemdelete
 HTTP_REFERER=http://localhost/landnblog/article/admin
 ---
+2016/06/25 16:21:26 [error] [exception.CException] exception 'CException' with message 'Property "Article.background" is not defined.' in F:\home\localhost\www\landnblog\framework\base\CComponent.php:130
+Stack trace:
+#0 F:\home\localhost\www\landnblog\framework\db\ar\CActiveRecord.php(145): CComponent->__get('background')
+#1 F:\home\localhost\www\landnblog\protected\controllers\BlockController.php(135): CActiveRecord->__get('background')
+#2 F:\home\localhost\www\landnblog\framework\web\actions\CInlineAction.php(49): BlockController->actionItemDelete()
+#3 F:\home\localhost\www\landnblog\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 F:\home\localhost\www\landnblog\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 F:\home\localhost\www\landnblog\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 F:\home\localhost\www\landnblog\framework\web\CWebApplication.php(282): CController->run('itemdelete')
+#7 F:\home\localhost\www\landnblog\framework\web\CWebApplication.php(141): CWebApplication->runController('block/itemdelet...')
+#8 F:\home\localhost\www\landnblog\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#9 F:\home\localhost\www\landnblog\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/landnblog/block/itemdelete
+HTTP_REFERER=http://localhost/landnblog/article/admin
+---
+2016/06/25 17:02:15 [error] [php] include(Product.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (F:\home\localhost\www\landnblog\framework\YiiBase.php:432)
+Stack trace:
+#0 F:\home\localhost\www\landnblog\protected\controllers\ArticleController.php(27): spl_autoload_call()
+#1 F:\home\localhost\www\landnblog\framework\web\actions\CInlineAction.php(49): ArticleController->actionAdmin()
+#2 F:\home\localhost\www\landnblog\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 F:\home\localhost\www\landnblog\framework\web\CController.php(286): ArticleController->runAction()
+#4 F:\home\localhost\www\landnblog\framework\web\CController.php(265): ArticleController->runActionWithFilters()
+#5 F:\home\localhost\www\landnblog\framework\web\CWebApplication.php(282): ArticleController->run()
+#6 F:\home\localhost\www\landnblog\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 F:\home\localhost\www\landnblog\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#8 F:\home\localhost\www\landnblog\index.php(13): CWebApplication->run()
+REQUEST_URI=/landnblog/article/admin
+in F:\home\localhost\www\landnblog\protected\controllers\ArticleController.php (27)
+in F:\home\localhost\www\landnblog\index.php (13)
+2016/06/25 17:03:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "admin&cat=5".' in F:\home\localhost\www\landnblog\framework\web\CController.php:483
+Stack trace:
+#0 F:\home\localhost\www\landnblog\framework\web\CController.php(270): CController->missingAction('admin&cat=5')
+#1 F:\home\localhost\www\landnblog\framework\web\CWebApplication.php(282): CController->run('admin&cat=5')
+#2 F:\home\localhost\www\landnblog\framework\web\CWebApplication.php(141): CWebApplication->runController('article/admin&c...')
+#3 F:\home\localhost\www\landnblog\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 F:\home\localhost\www\landnblog\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/landnblog/article/admin&cat=5
+---
+2016/06/25 17:03:52 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'category' in 'where clause'. The SQL statement executed was: SELECT COUNT(*) FROM `article` `t` WHERE category IN (:ycp0, :ycp1).
+in F:\home\localhost\www\landnblog\protected\controllers\ArticleController.php (23)
+in F:\home\localhost\www\landnblog\index.php (13)
+2016/06/25 17:03:52 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'category' in 'where clause'. The SQL statement executed was: SELECT COUNT(*) FROM `article` `t` WHERE category IN (:ycp0, :ycp1)' in F:\home\localhost\www\landnblog\framework\db\CDbCommand.php:543
+Stack trace:
+#0 F:\home\localhost\www\landnblog\framework\db\CDbCommand.php(433): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 F:\home\localhost\www\landnblog\framework\db\ar\CActiveRecord.php(1606): CDbCommand->queryScalar()
+#2 F:\home\localhost\www\landnblog\protected\controllers\ArticleController.php(23): CActiveRecord->count(Object(CDbCriteria))
+#3 F:\home\localhost\www\landnblog\framework\web\actions\CInlineAction.php(49): ArticleController->actionAdmin()
+#4 F:\home\localhost\www\landnblog\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 F:\home\localhost\www\landnblog\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 F:\home\localhost\www\landnblog\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 F:\home\localhost\www\landnblog\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 F:\home\localhost\www\landnblog\framework\web\CWebApplication.php(141): CWebApplication->runController('article/admin')
+#9 F:\home\localhost\www\landnblog\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 F:\home\localhost\www\landnblog\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/landnblog/article/admin?cat=5
+---
+2016/06/25 17:05:37 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'categoryArticle' in 'where clause'. The SQL statement executed was: SELECT COUNT(*) FROM `article` `t` WHERE categoryArticle IN (:ycp0, :ycp1).
+in F:\home\localhost\www\landnblog\protected\controllers\ArticleController.php (23)
+in F:\home\localhost\www\landnblog\index.php (13)
+2016/06/25 17:05:37 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'categoryArticle' in 'where clause'. The SQL statement executed was: SELECT COUNT(*) FROM `article` `t` WHERE categoryArticle IN (:ycp0, :ycp1)' in F:\home\localhost\www\landnblog\framework\db\CDbCommand.php:543
+Stack trace:
+#0 F:\home\localhost\www\landnblog\framework\db\CDbCommand.php(433): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 F:\home\localhost\www\landnblog\framework\db\ar\CActiveRecord.php(1606): CDbCommand->queryScalar()
+#2 F:\home\localhost\www\landnblog\protected\controllers\ArticleController.php(23): CActiveRecord->count(Object(CDbCriteria))
+#3 F:\home\localhost\www\landnblog\framework\web\actions\CInlineAction.php(49): ArticleController->actionAdmin()
+#4 F:\home\localhost\www\landnblog\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 F:\home\localhost\www\landnblog\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 F:\home\localhost\www\landnblog\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 F:\home\localhost\www\landnblog\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 F:\home\localhost\www\landnblog\framework\web\CWebApplication.php(141): CWebApplication->runController('article/admin')
+#9 F:\home\localhost\www\landnblog\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 F:\home\localhost\www\landnblog\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/landnblog/article/admin?cat=5
+---
+2016/06/25 17:21:16 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'category' in 'where clause'. The SQL statement executed was: SELECT COUNT(*) FROM `article` `t` WHERE category IN (:ycp0, :ycp1).
+in F:\home\localhost\www\landnblog\protected\controllers\ArticleController.php (23)
+in F:\home\localhost\www\landnblog\index.php (13)
+2016/06/25 17:21:16 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'category' in 'where clause'. The SQL statement executed was: SELECT COUNT(*) FROM `article` `t` WHERE category IN (:ycp0, :ycp1)' in F:\home\localhost\www\landnblog\framework\db\CDbCommand.php:543
+Stack trace:
+#0 F:\home\localhost\www\landnblog\framework\db\CDbCommand.php(433): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 F:\home\localhost\www\landnblog\framework\db\ar\CActiveRecord.php(1606): CDbCommand->queryScalar()
+#2 F:\home\localhost\www\landnblog\protected\controllers\ArticleController.php(23): CActiveRecord->count(Object(CDbCriteria))
+#3 F:\home\localhost\www\landnblog\framework\web\actions\CInlineAction.php(49): ArticleController->actionAdmin()
+#4 F:\home\localhost\www\landnblog\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 F:\home\localhost\www\landnblog\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 F:\home\localhost\www\landnblog\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 F:\home\localhost\www\landnblog\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 F:\home\localhost\www\landnblog\framework\web\CWebApplication.php(141): CWebApplication->runController('article/admin')
+#9 F:\home\localhost\www\landnblog\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 F:\home\localhost\www\landnblog\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/landnblog/article/admin?cat=5
+---
+2016/06/25 17:27:24 [error] [php] Object of class Category could not be converted to string (F:\home\localhost\www\landnblog\framework\db\CDbCommand.php:275)
+Stack trace:
+#0 F:\home\localhost\www\landnblog\framework\db\schema\CDbCommandBuilder.php(177): CMysqlCommandBuilder->bindValues()
+#1 F:\home\localhost\www\landnblog\framework\db\ar\CActiveRecord.php(1606): CMysqlCommandBuilder->createCountCommand()
+#2 F:\home\localhost\www\landnblog\protected\controllers\ArticleController.php(23): Article->count()
+#3 F:\home\localhost\www\landnblog\framework\web\actions\CInlineAction.php(49): ArticleController->actionAdmin()
+#4 F:\home\localhost\www\landnblog\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 F:\home\localhost\www\landnblog\framework\web\CController.php(286): ArticleController->runAction()
+#6 F:\home\localhost\www\landnblog\framework\web\CController.php(265): ArticleController->runActionWithFilters()
+#7 F:\home\localhost\www\landnblog\framework\web\CWebApplication.php(282): ArticleController->run()
+#8 F:\home\localhost\www\landnblog\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 F:\home\localhost\www\landnblog\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 F:\home\localhost\www\landnblog\index.php(13): CWebApplication->run()
+REQUEST_URI=/landnblog/article/admin?cat=5
+in F:\home\localhost\www\landnblog\protected\controllers\ArticleController.php (23)
+in F:\home\localhost\www\landnblog\index.php (13)
+2016/06/25 17:50:39 [error] [exception.CException] exception 'CException' with message 'Property "CDbCriteria.criteria" is not defined.' in F:\home\localhost\www\landnblog\framework\base\CComponent.php:173
+Stack trace:
+#0 F:\home\localhost\www\landnblog\framework\db\schema\CDbCriteria.php(160): CComponent->__set('criteria', Object(CDbCriteria))
+#1 F:\home\localhost\www\landnblog\framework\db\schema\CDbCommandBuilder.php(588): CDbCriteria->__construct(Array)
+#2 F:\home\localhost\www\landnblog\framework\db\ar\CActiveRecord.php(1474): CDbCommandBuilder->createCriteria(Array, Array)
+#3 F:\home\localhost\www\landnblog\protected\controllers\ArticleController.php(32): CActiveRecord->findAll(Array)
+#4 F:\home\localhost\www\landnblog\framework\web\actions\CInlineAction.php(49): ArticleController->actionAdmin()
+#5 F:\home\localhost\www\landnblog\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 F:\home\localhost\www\landnblog\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#7 F:\home\localhost\www\landnblog\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 F:\home\localhost\www\landnblog\framework\web\CWebApplication.php(282): CController->run('admin')
+#9 F:\home\localhost\www\landnblog\framework\web\CWebApplication.php(141): CWebApplication->runController('article/admin')
+#10 F:\home\localhost\www\landnblog\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#11 F:\home\localhost\www\landnblog\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/landnblog/article/admin?cat=3&page=3
+HTTP_REFERER=http://localhost/landnblog/article/admin?cat=3&page=2
+---
+2016/06/25 18:18:47 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Array' in 'where clause'. The SQL statement executed was: SELECT COUNT(*) FROM `article` `t` WHERE Array LIKE :ycp0.
+in F:\home\localhost\www\landnblog\protected\controllers\ArticleController.php (32)
+in F:\home\localhost\www\landnblog\index.php (13)
+2016/06/25 18:18:47 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Array' in 'where clause'. The SQL statement executed was: SELECT COUNT(*) FROM `article` `t` WHERE Array LIKE :ycp0' in F:\home\localhost\www\landnblog\framework\db\CDbCommand.php:543
+Stack trace:
+#0 F:\home\localhost\www\landnblog\framework\db\CDbCommand.php(433): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 F:\home\localhost\www\landnblog\framework\db\ar\CActiveRecord.php(1606): CDbCommand->queryScalar()
+#2 F:\home\localhost\www\landnblog\protected\controllers\ArticleController.php(32): CActiveRecord->count(Object(CDbCriteria))
+#3 F:\home\localhost\www\landnblog\framework\web\actions\CInlineAction.php(49): ArticleController->actionAdmin()
+#4 F:\home\localhost\www\landnblog\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 F:\home\localhost\www\landnblog\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 F:\home\localhost\www\landnblog\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 F:\home\localhost\www\landnblog\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 F:\home\localhost\www\landnblog\framework\web\CWebApplication.php(141): CWebApplication->runController('article/admin')
+#9 F:\home\localhost\www\landnblog\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 F:\home\localhost\www\landnblog\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/landnblog/article/admin
+HTTP_REFERER=http://localhost/landnblog/article/edit/13
+---
+2016/06/25 19:19:19 [error] [php] Invalid argument supplied for foreach() (F:\home\localhost\www\landnblog\protected\views\article\index.php:1)
+Stack trace:
+#0 F:\home\localhost\www\landnblog\framework\web\CController.php(869): ArticleController->renderFile()
+#1 F:\home\localhost\www\landnblog\framework\web\CController.php(782): ArticleController->renderPartial()
+#2 F:\home\localhost\www\landnblog\protected\controllers\ArticleController.php(7): ArticleController->render()
+#3 F:\home\localhost\www\landnblog\framework\web\actions\CInlineAction.php(49): ArticleController->actionIndex()
+#4 F:\home\localhost\www\landnblog\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 F:\home\localhost\www\landnblog\framework\web\CController.php(286): ArticleController->runAction()
+#6 F:\home\localhost\www\landnblog\framework\web\CController.php(265): ArticleController->runActionWithFilters()
+#7 F:\home\localhost\www\landnblog\framework\web\CWebApplication.php(282): ArticleController->run()
+#8 F:\home\localhost\www\landnblog\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 F:\home\localhost\www\landnblog\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 F:\home\localhost\www\landnblog\index.php(13): CWebApplication->run()
+REQUEST_URI=/landnblog/article/index
+in F:\home\localhost\www\landnblog\protected\views\article\index.php (1)
+in F:\home\localhost\www\landnblog\protected\controllers\ArticleController.php (7)
+in F:\home\localhost\www\landnblog\index.php (13)
+2016/06/25 19:20:02 [error] [php] Invalid argument supplied for foreach() (F:\home\localhost\www\landnblog\protected\views\article\index.php:1)
+Stack trace:
+#0 F:\home\localhost\www\landnblog\framework\web\CController.php(869): ArticleController->renderFile()
+#1 F:\home\localhost\www\landnblog\framework\web\CController.php(782): ArticleController->renderPartial()
+#2 F:\home\localhost\www\landnblog\protected\controllers\ArticleController.php(7): ArticleController->render()
+#3 F:\home\localhost\www\landnblog\framework\web\actions\CInlineAction.php(49): ArticleController->actionIndex()
+#4 F:\home\localhost\www\landnblog\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 F:\home\localhost\www\landnblog\framework\web\CController.php(286): ArticleController->runAction()
+#6 F:\home\localhost\www\landnblog\framework\web\CController.php(265): ArticleController->runActionWithFilters()
+#7 F:\home\localhost\www\landnblog\framework\web\CWebApplication.php(282): ArticleController->run()
+#8 F:\home\localhost\www\landnblog\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 F:\home\localhost\www\landnblog\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 F:\home\localhost\www\landnblog\index.php(13): CWebApplication->run()
+REQUEST_URI=/landnblog/article/index
+in F:\home\localhost\www\landnblog\protected\views\article\index.php (1)
+in F:\home\localhost\www\landnblog\protected\controllers\ArticleController.php (7)
+in F:\home\localhost\www\landnblog\index.php (13)
+2016/06/25 19:20:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "article".' in F:\home\localhost\www\landnblog\framework\web\CController.php:483
+Stack trace:
+#0 F:\home\localhost\www\landnblog\framework\web\CController.php(270): CController->missingAction('article')
+#1 F:\home\localhost\www\landnblog\framework\web\CWebApplication.php(282): CController->run('article')
+#2 F:\home\localhost\www\landnblog\framework\web\CWebApplication.php(141): CWebApplication->runController('site/article')
+#3 F:\home\localhost\www\landnblog\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 F:\home\localhost\www\landnblog\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/landnblog/article
+---
+2016/06/25 19:22:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "article".' in F:\home\localhost\www\landnblog\framework\web\CController.php:483
+Stack trace:
+#0 F:\home\localhost\www\landnblog\framework\web\CController.php(270): CController->missingAction('article')
+#1 F:\home\localhost\www\landnblog\framework\web\CWebApplication.php(282): CController->run('article')
+#2 F:\home\localhost\www\landnblog\framework\web\CWebApplication.php(141): CWebApplication->runController('site/article')
+#3 F:\home\localhost\www\landnblog\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 F:\home\localhost\www\landnblog\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/landnblog/article
+---
+2016/06/25 19:23:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "article".' in F:\home\localhost\www\landnblog\framework\web\CController.php:483
+Stack trace:
+#0 F:\home\localhost\www\landnblog\framework\web\CController.php(270): CController->missingAction('article')
+#1 F:\home\localhost\www\landnblog\framework\web\CWebApplication.php(282): CController->run('article')
+#2 F:\home\localhost\www\landnblog\framework\web\CWebApplication.php(141): CWebApplication->runController('site/article')
+#3 F:\home\localhost\www\landnblog\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 F:\home\localhost\www\landnblog\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/landnblog/article
+---
+2016/06/25 19:31:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "indexsddsd".' in F:\home\localhost\www\landnblog\framework\web\CController.php:483
+Stack trace:
+#0 F:\home\localhost\www\landnblog\framework\web\CController.php(270): CController->missingAction('indexsddsd')
+#1 F:\home\localhost\www\landnblog\framework\web\CWebApplication.php(282): CController->run('indexsddsd')
+#2 F:\home\localhost\www\landnblog\framework\web\CWebApplication.php(141): CWebApplication->runController('article/indexsd...')
+#3 F:\home\localhost\www\landnblog\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 F:\home\localhost\www\landnblog\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/landnblog/article/indexsddsd
+---
+2016/06/25 19:49:06 [error] [exception.CException] exception 'CException' with message 'BlockWidget cannot find the view "".' in F:\home\localhost\www\landnblog\framework\web\widgets\CWidget.php:246
+Stack trace:
+#0 F:\home\localhost\www\landnblog\protected\extensions\blockwidget\BlockWidget.php(13): CWidget->render(NULL, Array)
+#1 F:\home\localhost\www\landnblog\framework\web\CBaseController.php(181): BlockWidget->run()
+#2 F:\home\localhost\www\landnblog\protected\views\layouts\article.php(50): CBaseController->widget('application.ext...', Array)
+#3 F:\home\localhost\www\landnblog\framework\web\CBaseController.php(126): require('F:\home\localho...')
+#4 F:\home\localhost\www\landnblog\framework\web\CBaseController.php(95): CBaseController->renderInternal('F:\home\localho...', Array, true)
+#5 F:\home\localhost\www\landnblog\framework\web\CController.php(784): CBaseController->renderFile('F:\home\localho...', Array, true)
+#6 F:\home\localhost\www\landnblog\protected\controllers\ArticleController.php(37): CController->render('index', Array)
+#7 F:\home\localhost\www\landnblog\framework\web\actions\CInlineAction.php(49): ArticleController->actionIndex()
+#8 F:\home\localhost\www\landnblog\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 F:\home\localhost\www\landnblog\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#10 F:\home\localhost\www\landnblog\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 F:\home\localhost\www\landnblog\framework\web\CWebApplication.php(282): CController->run('index')
+#12 F:\home\localhost\www\landnblog\framework\web\CWebApplication.php(141): CWebApplication->runController('article/index')
+#13 F:\home\localhost\www\landnblog\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#14 F:\home\localhost\www\landnblog\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/landnblog/article/index
+HTTP_REFERER=http://localhost/landnblog/article/indexsddsd
+---

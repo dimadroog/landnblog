@@ -32,7 +32,7 @@
             jQuery(document).ready(function() {
               jQuery('#datetimepicker').datetimepicker({
                   locale: 'ru',
-                  format: 'YYYY.MM.DD',
+                  format: 'DD.MM.YYYY',
                   defaultDate: new Date(<?php echo $item->date; ?> * 1000),
                   // defaultDate: Date.now(),
               });

@@ -125,6 +125,22 @@ function testAnim() {
     });
 };
 
-function ShowArticleDetails(elm) {
-    jQuery(elm).closest('.panel').find('.dn').toggle(300);
+function ToggleArticleDetails(elm) {
+    jQuery(elm).closest('.panel').find('.toggle').toggle(300);
+};
+
+function ShowAllArticleDetails() {
+    jQuery('.toggle').each(function(){
+        jQuery(this).show(300);
+    });
+    jQuery('#show_all').hide();
+    jQuery('#hide_all').show();
+};
+
+function HideAllArticleDetails() {
+    jQuery('.toggle').each(function(){
+        jQuery(this).hide(300);
+    });
+    jQuery('#show_all').show();
+    jQuery('#hide_all').hide();
 };

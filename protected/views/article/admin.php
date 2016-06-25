@@ -11,23 +11,34 @@
 	    echo '<div class="panel panel-success"><div class="panel-body">'.Yii::app()->user->getFlash('delete').'</div></div>';
 	}
 ?>
-<p><a href="<?php echo Yii::app()->createUrl('/article/create/'); ?>">Создать новую статью</a></p>
+<div class="row">
+    <div class="col-sm-6 category-item-admin">
+        <p><a href="<?php echo Yii::app()->createUrl('/article/create/'); ?>">Создать новую статью</a></p>
+    </div>
+    <div class="col-sm-6 right-to-left">
+        <p>
+            <a id="show_all" onclick="ShowAllArticleDetails(this)">Развернуть все</a>
+            <a id="hide_all" class="dn" onclick="HideAllArticleDetails(this)">Свернуть все</a>
+        </p>
+    </div>
+</div>
 
 <?php foreach ($articles as $item): ?>
 	<div class="panel panel-default item">
 	    <div class="panel-body">
 	    	<div class="row">
 		    	<div class="col-sm-6 category-item-admin">
-		    		<a onclick="ShowArticleDetails(this)"><?php echo $item->title; ?></a>
+		    		<a onclick="ToggleArticleDetails(this)"><?php echo $item->title; ?></a>
 		    	</div>
 		    	<div class="col-sm-6 right-to-left">
 	                <a class="btn btn-xs btn-primary" href="<?php echo Yii::app()->createUrl('/article/view/'.$item->id); ?>">Перейти</a>
 	                <a class="btn btn-xs btn-warning" href="<?php echo Yii::app()->createUrl('/article/edit/'.$item->id); ?>">Редактировать</a>
-                    <a class="btn btn-xs btn-danger" onclick="ItemDelete(this, '<?php echo get_class($item); ?>', <?php echo $item->id; ?>, '<?php echo Yii::app()->createUrl('/block/itemdelete/'); ?>', 'false')">Удалить</a>
+                    <a class="btn btn-xs btn-danger" onclick="ItemDelete(this, '<?php echo get_class($item); ?>', <?php echo $item->id; ?>, '<?php echo Yii::app()->createUrl('/article/itemdelete/'); ?>', 'false')">Удалить</a>
 		    	</div>
 	    	</div>
-	    	<div class="dn">
-	    		<p></p>
+            <div class="toggle dn">
+	    	<!-- <div class=""> -->
+                <p></p>
 	    		<p><span class="text-muted">Дата: </span><?php echo date('d.m.Y', $item->date); ?></p>
                 <p><span class="text-muted">Опубликован: </span><?php echo ($item->publish == 1)?'<span class="label label-success">Да</span>':'<span class="label label-danger">Нет</span>'; ?></p>
                 <p>
@@ -47,3 +58,17 @@
 	<h3 class="text-muted">Пока нет статей</h3>
 <?php endif; ?>
 
+
+        <div class="text-center">
+            <?php $this->widget('CLinkPager', array(
+                'pages' => $pages,
+                'header' => '',
+                'firstPageLabel' => '<<',
+                'lastPageLabel' => '>>',
+                'nextPageLabel' => '>',
+                'prevPageLabel' => '<',
+                'selectedPageCssClass' => 'active',
+                'maxButtonCount' => '3',
+                'htmlOptions' => array('class' => 'pagination'),
+            )); ?>
+        </div>
