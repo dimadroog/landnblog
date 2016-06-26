@@ -54,6 +54,7 @@ class Category extends CActiveRecord
 	        	'name' => $arr[$parent_id][$i]->name,
 	        	'full_name' => Category::fullName($arr[$parent_id][$i]->id),
 	        	'level' => $lvl,
+	        	'arr_names' => Category::arrNames($arr[$parent_id][$i]->id),
 	        	);
 	        Category::buildTree($arr, $arr[$parent_id][$i]->id, $output_array, $lvl);
 	    }
@@ -85,6 +86,27 @@ class Category extends CActiveRecord
 			}
 		}
 		return $result;
+	}
+
+	public static function arrNames($id){
+		$cat = Category::model()->findByPk($id);
+		$str = '';
+		$current_cat = $cat->name;
+		$arr = array($cat->id => $cat->name);
+		do {
+			$cat = Category::model()->findByPk($cat->parent_id);
+			if ($cat){
+				$arr[$cat->id] = $cat->name; 
+			}
+		}
+		while ($cat->parent_id > 0);
+		$result = array_reverse($arr, true);
+		return $result;
+	}
+
+	public static function name($id){
+		$cat = Category::model()->findByPk($id);
+		return $cat->name;
 	}
 
     public static function repeatLevelSymbol($lvl){        

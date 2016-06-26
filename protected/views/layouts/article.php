@@ -1,5 +1,4 @@
 <?php /* @var $this Controller */ ?>
-<title>Статьи сайта <?php echo Setting::getData('sitename'); ?></title>
 <?php $this->beginContent('//layouts/main'); ?>
 <!-- startbootstrap-scrolling-nav -->
 <link href="<?php echo Yii::app()->request->baseUrl; ?>/static/startbootstrap-scrolling-nav/css/scrolling-nav.css" rel="stylesheet">
@@ -15,7 +14,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top"><?php echo Setting::getData('sitename'); ?></a>
+                <a class="navbar-brand page-scroll" href="<?php echo Yii::app()->createUrl('/site/index'); ?>"><?php echo Setting::getData('sitename'); ?></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -37,34 +36,12 @@
     </div>
 </nav>
 
-<div class="container">
 
     <div id="block_preview" class="block-content">
         <div class="container">
-            <h1>Блог сайта <?php echo Setting::getData('sitename'); ?></h1>
-            <br>
-            <div class="row">
-                <div class="col-sm-9">
-                    <?php echo $content; ?>
-                </div>
-                <div class="col-sm-3">
-                    <div class="list-group">
-                        <a href="<?php echo Yii::app()->createUrl('/article/index'); ?>" class="list-group-item <?php echo($_GET['cat'])?'':'active' ?>">Все категории:</a>
-                        <?php foreach (Category::tree() as $value): ?>
-                 
-                            <a href="?cat=<?php echo $value['id'] ?>" class="list-group-item <?php echo($value['id'] == $_GET['cat'])?'active':'' ?>">
-                                <?php echo Category::repeatLevelSymbol($value['level']) ?>
-                                <?php echo $value['name']; ?>
-                            </a>
-
-                        <?php endforeach; ?>
-                    </div>
-
-                </div>
-            </div>
+            <?php echo $content; ?>
         </div>
     </div>
-</div>
 
 <div id="block_preview" class="block-content <?php echo Block::getByAlias('footer')->animate ?>" style="<?php echo Block::buildStyle(Block::getByAlias('footer')->id, 1); ?>">
     <div class="container">

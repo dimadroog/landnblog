@@ -2,10 +2,10 @@
 
 class ArticleController extends Controller
 {
-	public $layout='//layouts/article';
-	
-	public function actionIndex()
-	{
+
+	public function actionIndex(){
+		$this->layout='//layouts/article';
+
         $cats = Category::model()->findAll();
         $criteria=new CDbCriteria();
         
@@ -18,6 +18,7 @@ class ArticleController extends Controller
             }
             $criteria->addInCondition('id', $rel_article_ids);
         }
+        $criteria->compare('publish',1);
         $criteria->order = 'date DESC';
         // $criteria->addSearchCondition('title', '%lorem%' , false,'OR');
         // $criteria->addSearchCondition('content', '%lorem%' , false,'OR');
@@ -34,6 +35,19 @@ class ArticleController extends Controller
             'pages' => $pages,
             'cats' => $cats,
             'current_cat' => $cat,
+        ));
+	}
+
+
+	public function actionView($id){
+		$this->layout='//layouts/article';
+
+        $item = Article::model()->findByPk($id);
+        $cats = $item->articleCategory;
+
+        $this->render('view', array(
+            'item' => $item,
+            'cats' => $cats,
         ));
 	}
 

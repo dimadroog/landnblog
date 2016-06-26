@@ -16,15 +16,17 @@ if (Yii::app()->user->hasFlash('delete')){
     <div class="panel-body">
     <?php foreach (Category::tree() as $item): ?>
     	<div class="category-admin" style="margin-left:<?php echo $item['level']*25; ?>px">
-    	<div class="row">
-	    	<div class="col-sm-6 category-item-admin">
-	    		<?php echo $item['name']; ?>
-	    	</div>
-	    	<div class="col-sm-6 right-to-left">
-                <a class="btn btn-xs btn-warning" href="<?php echo Yii::app()->createUrl('/category/edit/'.$item['id']); ?>">Редактировать</a>
-                <a class="btn btn-xs btn-danger" href="<?php echo Yii::app()->createUrl('/category/delete/'.$item['id']); ?>"onclick="return confirm('Дочерние категории будут перемещены в корень каталога')">Удалить</a>
-	    	</div>
-    	</div>
+            <p>
+                <div class="row">
+                    <div class="col-sm-6 category-item-admin">
+                        <?php echo $item['name']; ?>
+                    </div>
+                    <div class="col-sm-6 right-to-left">
+                        <a class="btn btn-xs btn-warning" href="<?php echo Yii::app()->createUrl('/category/edit/'.$item['id']); ?>">Редактировать</a>
+                        <a class="btn btn-xs btn-danger" href="<?php echo Yii::app()->createUrl('/category/delete/'.$item['id']); ?>"onclick="return confirm('Дочерние категории будут перемещены в корень каталога')">Удалить</a>
+                    </div>
+                </div>
+            </p>
     	</div>
     <?php endforeach; ?>	
 	</div>
@@ -33,5 +35,10 @@ if (Yii::app()->user->hasFlash('delete')){
 
 
 
-<?php // print_r(Category::tree(true)); ?>
+<?php  
+// echo '<pre>';
+//     print_r(Category::arrNames(28)); 
+//     print_r(Category::tree(true)); 
+// echo '</pre>';
+?>
 

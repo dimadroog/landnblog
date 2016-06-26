@@ -1,96 +1,69 @@
-<div class="container">
-    <h2>Блок "<?php echo $item->name; ?>"</h2>
+<?php 
+    $str = '';
+    foreach ($item->articleCategory as $value) {
+        $str .= $value->name.', ';
+    }
+    $keywords = $str.Setting::getData('seo_keywords');
 
-    <?php 
-        if (Yii::app()->user->hasFlash('changedata')){
-            echo '<div class="panel panel-success"><div class="panel-body">'.Yii::app()->user->getFlash('changedata').'</div></div>';
-        } 
-    ?>
-    <p><a href="<?php echo Yii::app()->createUrl('/block/edit/'.$item->id); ?>">Редактировать</a></p>
-    <div class="panel panel-default">
-        <div class="panel-body">
-            <div class="row">
-                <div class="col-sm-3">
-                    <span class="text-muted">Название:</span>
+    $this->pageTitle = $item->title.' | '.Setting::getData('sitename');
+    Yii::app()->clientScript->registerMetaTag(strip_tags($item->preview) , description);
+    Yii::app()->clientScript->registerMetaTag($keywords , keywords);
+?>
+
+
+<br>
+<div class="row">
+    <div class="col-sm-9">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="fl">
+                    <h1><?php echo $item->title; ?></h1><br>
+                    <p><?php echo $item->content; ?></p>
                 </div>
-                <div class="col-sm-9">
-                    <?php echo $item->name; ?>
-                </div>
-            </div>
-            <hr>
-            <?php if (Yii::app()->user->name == 'superadmin'): ?>
-                <div class="row">
-                    <div class="col-sm-3">
-                        <span class="text-muted">Alias:</span>
-                    </div>
-                    <div class="col-sm-9">
-                        <?php echo $item->alias; ?>
-                    </div>
-                </div>
-                <hr>    
-            <?php endif ?>
-            <div class="row">
-                <div class="col-sm-3">
-                    <span class="text-muted">Содержимое блока:</span>
-                </div>
-                <div class="col-sm-9">
-                <a href="#block_preview">Предпросмотр</a>
+
+                <div class="fl">    
+                    <p class="text-muted">Дата: <?php echo date('d.m.Y', $item->date); ?></p>
+                    <p>
+                    <?php if ($item->articleCategory): ?>
+                        <span class="text-muted">Категории: </span>
+                        <?php foreach ($item->articleCategory as $value): ?>
+                            <a class="text-muted" href="?cat=<?php echo $value['id'] ?>"><?php echo $value->name; ?>;</a>
+                        <?php endforeach ?>
+                    <?php endif ?>
+                    </p>
                 </div>
             </div>
-            <hr>
-            <div class="row">
-                <div class="col-sm-3">
-                    <span class="text-muted">Цвет фона:</span>
-                </div>
-                <div class="col-sm-9">
-                    <p>&nbsp;<?php echo ($item->bg_color)?'<span class="label" style="background:'.$item->bg_color.';">'.$item->bg_color.'</span>':'<span class="label label-danger">Нет</span>'; ?></p>
-                </div>
-            </div>
-            <hr>
-            <div class="row">
-                <div class="col-sm-3">
-                    <span class="text-muted">Фоновое изображение:</span>
-                </div>
-                <div class="col-sm-9">
-                    <p>&nbsp;<?php echo ($item->background)?'<img class="image-admin-prev" src="'.Yii::app()->request->baseUrl.'/images/bg_blocks/'.$item->background.'">':'<span class="label label-danger">Нет</span>'; ?></p>
-                </div>
-            </div>
-            <hr>
-            <div class="row">
-                <div class="col-sm-3">
-                    <span class="text-muted">Опубликован:</span>
-                </div>
-                <div class="col-sm-9">
-                    <p>&nbsp;<?php echo ($item->publish == 1)?'<span class="label label-success">Да</span>':'<span class="label label-danger">Нет</span>'; ?></p>
-                </div>
-            </div>
-            <hr>
-            <div class="row">
-                <div class="col-sm-3">
-                    <span class="text-muted">Ссылка в меню:</span>
-                </div>
-                <div class="col-sm-9">
-                    <p>&nbsp;<?php echo ($item->publish_menu == 1)?'<span class="label label-success">Да</span>':'<span class="label label-danger">Нет</span>'; ?></p>
-                </div>
-            </div>
-            <hr>
-            <div class="row">
-                <div class="col-sm-3">
-                    <span class="text-muted">Порядок отображения:</span>
-                </div>
-                <div class="col-sm-9">
-                    <?php echo $item->weight; ?>
-                </div>
-            </div>
-            <hr>
-            <p><a href="<?php echo Yii::app()->createUrl('/block/edit/'.$item->id); ?>">Редактировать</a></p>
         </div>
+
+
+        <div class="text-center">
+            <?php $this->widget('CLinkPager', array(
+                'pages' => $pages,
+                'header' => '',
+                'firstPageLabel' => '<<',
+                'lastPageLabel' => '>>',
+                'nextPageLabel' => '>',
+                'prevPageLabel' => '<',
+                'selectedPageCssClass' => 'active',
+                'maxButtonCount' => '3',
+                'htmlOptions' => array('class' => 'pagination'),
+            )); ?>
+        </div>
+
+    </div>
+    <div class="col-sm-3">
+    
+        <div class="list-group">
+            <a href="<?php echo Yii::app()->createUrl('/article/index'); ?>" class="list-group-item <?php echo($_GET['cat'])?'':'active' ?>">Все категории:</a>
+            <?php foreach (Category::tree() as $value): ?>
+     
+                <a href="<?php echo Yii::app()->createUrl('/article/index'); ?>?cat=<?php echo $value['id'] ?>" class="list-group-item <?php echo($value['id'] == $_GET['cat'])?'active':'' ?>">
+                    <?php echo Category::repeatLevelSymbol($value['level']) ?>
+                    <?php echo $value['name']; ?>
+                </a>
+
+            <?php endforeach; ?>
+        </div>
+
     </div>
 </div>
-
-<div id="block_preview" class="block-content <?php echo $item->animate ?>" style="<?php echo Block::buildStyle($item->id, $key); ?>">
-    <div class="container">
-            <?php $this->widget('application.extensions.blockwidget.BlockWidget', array('item' => $item)); ?>
-    </div>
-</div>
-
