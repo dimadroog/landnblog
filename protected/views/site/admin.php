@@ -33,7 +33,7 @@
                 <p class="text-muted">Управление категориями статей</p>
             </div>
             <div class="col-sm-6 right-to-left">  
-                <a class="btn btn-xs btn-primary" href="<?php echo Yii::app()->createUrl('/category/index/'); ?>">Перейти</a>
+                <a class="btn btn-xs btn-primary" href="<?php echo Yii::app()->createUrl('/category/admin/'); ?>">Перейти</a>
             </div>
         </div>
     </div>

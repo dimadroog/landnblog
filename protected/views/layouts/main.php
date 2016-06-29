@@ -21,13 +21,15 @@
         <link href="<?php echo Yii::app()->request->baseUrl; ?>/static/bootstrap/css/<?php echo Setting::getData('bootstrap_theme'); ?>.css" rel="stylesheet">
         <!-- colorpicker -->
         <link href="<?php echo Yii::app()->request->baseUrl; ?>/static/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css" rel="stylesheet">        
-        <!-- colorpicker -->
-        <link href="<?php echo Yii::app()->request->baseUrl; ?>/static/datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+        <!-- datetimepicker -->
+        <link href="<?php echo Yii::app()->request->baseUrl; ?>/static/datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet">        
         <!-- Custom CSS -->
         <link href="<?php echo Yii::app()->request->baseUrl; ?>/static/droog/css/style.css" rel="stylesheet">
-	    <!-- Fonts -->
-	    <!-- <link href='https://fonts.googleapis.com/css?family=Lobster&subset=latin,cyrillic' rel='stylesheet' type='text/css'> -->
-	    <link href='https://fonts.googleapis.com/css?family=Roboto&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+        <!-- Fonts -->
+        <!-- <link href='https://fonts.googleapis.com/css?family=Lobster&subset=latin,cyrillic' rel='stylesheet' type='text/css'> -->
+        <link href='https://fonts.googleapis.com/css?family=Roboto&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+        <!-- highlight -->
+        <link href="<?php echo Yii::app()->request->baseUrl; ?>/static/highlight/styles/notepad_plus_plus.css" rel="stylesheet">
 		
 		<!-- jQuery -->
 		<script src="<?php echo Yii::app()->request->baseUrl; ?>/static/jquery/jquery-1.11.1.min.js"></script>
@@ -50,6 +52,7 @@
 		    jQuery( window ).load(function() { //it must be before all document.ready functions
 			    if (jQuery("textarea").is("[name='wysiwyg']")) {
                     CKEDITOR.replace('wysiwyg',{
+                        height : '600px',
                         filebrowserBrowseUrl : '<?php echo Yii::app()->request->baseUrl; ?>/static/wysiwyg/responsive_filemanager/filemanager/dialog.php?type=2&editor=ckeditor&fldr=',
                         filebrowserImageBrowseUrl : '<?php echo Yii::app()->request->baseUrl; ?>/static/wysiwyg/responsive_filemanager/filemanager/dialog.php?type=1&editor=ckeditor&fldr='
                     });
@@ -77,6 +80,8 @@
         <script src="<?php echo Yii::app()->request->baseUrl; ?>/static/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
         <!-- select2 -->
         <script src="<?php echo Yii::app()->request->baseUrl; ?>/static/select2/js/select2.min.js"></script>
+        <!-- highlight -->
+        <script src="<?php echo Yii::app()->request->baseUrl; ?>/static/highlight/highlight.pack.js"></script>
         <!-- datetimepicker -->
         <script src="<?php echo Yii::app()->request->baseUrl; ?>/static/datetimepicker/js/moment-with-locales.js"></script>
         <script src="<?php echo Yii::app()->request->baseUrl; ?>/static/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>

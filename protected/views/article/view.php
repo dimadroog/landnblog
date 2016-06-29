@@ -10,24 +10,40 @@
     Yii::app()->clientScript->registerMetaTag($keywords , keywords);
 ?>
 
+<!-- <div class="advert"> -->
+    <img src="http://info-c.ru/userfiles/image/foto/111/baners/reklama.jpg">
+<!-- </div> -->
 
-<br>
+<h1><?php echo $item->title; ?></h1><br>
 <div class="row">
-    <div class="col-sm-9">
+    <?php if ($item->articleCategory): ?>
+        <div class="col-sm-9">
+            <ol class="breadcrumb">
+                <li><a href="<?php echo Yii::app()->createUrl('/article/index'); ?>">Все статьи</a></li>
+                <?php if ($last_cat->id): ?> 
+                    <?php foreach (Category::arrNames($last_cat->id) as $id => $name): ?>
+                        <li>
+                            <a href="<?php echo Yii::app()->createUrl('/article/index'); ?>?cat=<?php echo $id; ?>"><?php echo $name; ?></a>
+                        </li>
+                    <?php endforeach ?>
+                <?php endif ?>
+            </ol>
+    <?php else: ?>
+        <div class="col-sm-12">
+    <?php endif ?>
         <div class="panel panel-default">
             <div class="panel-body">
-                <div class="fl">
-                    <h1><?php echo $item->title; ?></h1><br>
+                <div class="half-article">
+                    <p class="text-muted right-to-left">Дата: <?php echo date('d.m.Y', $item->date); ?></p>
                     <p><?php echo $item->content; ?></p>
                 </div>
 
-                <div class="fl">    
-                    <p class="text-muted">Дата: <?php echo date('d.m.Y', $item->date); ?></p>
+                <div class="half-article">    
                     <p>
                     <?php if ($item->articleCategory): ?>
                         <span class="text-muted">Категории: </span>
                         <?php foreach ($item->articleCategory as $value): ?>
-                            <a class="text-muted" href="?cat=<?php echo $value['id'] ?>"><?php echo $value->name; ?>;</a>
+                            <a class="text-muted" href="<?php echo Yii::app()->createUrl('/article/index'); ?>?cat=<?php echo $value['id'] ?>"><?php echo $value->name; ?>;</a>
                         <?php endforeach ?>
                     <?php endif ?>
                     </p>
@@ -35,35 +51,37 @@
             </div>
         </div>
 
-
-        <div class="text-center">
-            <?php $this->widget('CLinkPager', array(
-                'pages' => $pages,
-                'header' => '',
-                'firstPageLabel' => '<<',
-                'lastPageLabel' => '>>',
-                'nextPageLabel' => '>',
-                'prevPageLabel' => '<',
-                'selectedPageCssClass' => 'active',
-                'maxButtonCount' => '3',
-                'htmlOptions' => array('class' => 'pagination'),
-            )); ?>
-        </div>
-
     </div>
-    <div class="col-sm-3">
-    
-        <div class="list-group">
-            <a href="<?php echo Yii::app()->createUrl('/article/index'); ?>" class="list-group-item <?php echo($_GET['cat'])?'':'active' ?>">Все категории:</a>
-            <?php foreach (Category::tree() as $value): ?>
-     
-                <a href="<?php echo Yii::app()->createUrl('/article/index'); ?>?cat=<?php echo $value['id'] ?>" class="list-group-item <?php echo($value['id'] == $_GET['cat'])?'active':'' ?>">
-                    <?php echo Category::repeatLevelSymbol($value['level']) ?>
-                    <?php echo $value['name']; ?>
-                </a>
 
-            <?php endforeach; ?>
+    <?php if ($item->articleCategory): ?>
+        <div class="col-sm-3">
+        
+            <div class="list-group">
+                <a href="<?php echo Yii::app()->createUrl('/article/index'); ?>" class="list-group-item <?php echo($_GET['cat'])?'':'active' ?>">Все категории:</a>
+                <?php foreach (Category::tree() as $value): ?>
+         
+                    <a href="<?php echo Yii::app()->createUrl('/article/index'); ?>?cat=<?php echo $value['id'] ?>" class="list-group-item <?php echo($value['id'] == $_GET['cat'])?'active':'' ?>">
+                        <?php echo Category::repeatLevelSymbol($value['level']); ?>
+                        <?php echo $value['name']; ?>
+                    </a>
+
+                <?php endforeach; ?>
+            </div>
+
         </div>
+    <?php endif ?>    
 
-    </div>
 </div>
+
+
+<?php if ($related_articles): ?>  
+    <h3>Похожие статьи:</h3>
+    <?php foreach ($related_articles as $id => $title): ?>
+        <p><a href="<?php echo Yii::app()->createUrl('/article/view/'.$id); ?>"><?php echo $title; ?></a></p>
+    <?php endforeach ?>
+<?php else: ?>
+    <h3>Недавние статьи:</h3>
+    <?php foreach ($all_articles as $value): ?>
+        <p><a href="<?php echo Yii::app()->createUrl('/article/view/'.$value->id); ?>"><?php echo $value->title; ?></a></p>
+    <?php endforeach ?>
+<?php endif ?>

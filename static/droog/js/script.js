@@ -20,6 +20,12 @@ jQuery(document).ready(function() {
     //     c(sum);
     // };
 
+    /* Highlight code */
+    hljs.initHighlightingOnLoad();
+
+    /* footer */
+    $('#template_content').css({'min-height':$('#template_content').outerHeight()+$(window).outerHeight()-$('body').outerHeight()})
+
 
     /*scrolltop*/
     jQuery(window).scroll(function(){
@@ -94,7 +100,7 @@ function CheckRequired(){
 }
 
 function ItemDelete(elm, classname, item, url, refresh){
-    var sure = confirm("Уделенные данные нельзя будет восстановить. Продолжить?");
+    var sure = confirm("Удаленные данные нельзя будет восстановить. Продолжить?");
     if (sure == true){  
         var lnk = jQuery(elm);
         var div = elm.closest('.item');

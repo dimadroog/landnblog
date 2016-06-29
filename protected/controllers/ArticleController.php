@@ -8,7 +8,7 @@ class ArticleController extends Controller
 
         $cats = Category::model()->findAll();
         $criteria=new CDbCriteria();
-        
+
          if ($_GET['cat']) {
             $cat = Category::model()->findByPk($_GET['cat']);
             $art_cat = ArticleCategory::model()->findAllByAttributes(array('category_id' => $_GET['cat'] ));
@@ -18,10 +18,13 @@ class ArticleController extends Controller
             }
             $criteria->addInCondition('id', $rel_article_ids);
         }
-        $criteria->compare('publish',1);
+
+        if ($_GET['search']) {
+	        $criteria->addSearchCondition('title', '%'.$_GET['search'].'%' , false,'OR');
+	        $criteria->addSearchCondition('content', '%'.$_GET['search'].'%' , false,'OR');
+    	}
         $criteria->order = 'date DESC';
-        // $criteria->addSearchCondition('title', '%lorem%' , false,'OR');
-        // $criteria->addSearchCondition('content', '%lorem%' , false,'OR');
+    	$criteria->compare('publish', 1);
 
         $count=Article::model()->count($criteria);
         $pages=new CPagination($count);
@@ -40,14 +43,40 @@ class ArticleController extends Controller
 
 
 	public function actionView($id){
-		$this->layout='//layouts/article';
+		$all_articles_params = array(
+	        'condition'=>'publish=1 AND id<>'.$id,
+	        'order'=>'date DESC',
+	        'limit' => 5,
+			);
+		$all_articles = Article::model()->findAll($all_articles_params);
 
         $item = Article::model()->findByPk($id);
+		if ($item->publish == 0 && (Yii::app()->user->name != 'admin' && Yii::app()->user->name != 'superadmin')){
+			throw new CHttpException(404, 'Статья снята с публикации');
+		}
+		$this->layout='//layouts/article';
+
         $cats = $item->articleCategory;
+        $arr = array();
+        foreach ($cats as $cat) {
+
+        	foreach ($cat->categoryArticle as $art) {
+        		if ($art->publish) {
+        			$arr[$art->id] = $art->title;
+        		}
+        	}
+        }
+        unset($arr[$item->id]);
+        asort($arr);
+        $arr = array_slice($arr, 0, 5, true);
+        $last_cat = end($cats);
+
 
         $this->render('view', array(
             'item' => $item,
-            'cats' => $cats,
+            'last_cat' => $last_cat,
+            'related_articles' => $arr,
+            'all_articles' => $all_articles,
         ));
 	}
 

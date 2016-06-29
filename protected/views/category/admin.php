@@ -37,8 +37,6 @@ if (Yii::app()->user->hasFlash('delete')){
 
 <?php  
 // echo '<pre>';
-//     print_r(Category::arrNames(28)); 
 //     print_r(Category::tree(true)); 
 // echo '</pre>';
 ?>
-

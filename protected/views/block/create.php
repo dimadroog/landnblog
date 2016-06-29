@@ -15,8 +15,11 @@
 
         <div class="form-group">
             <label class="control-label" for="wysiwyg">Содержимое блока</label>
-            <textarea class="form-control" name="wysiwyg" id="wysiwyg" rows="7"></textarea>
+            <div class="ckeditor-wrapper">
+                <textarea class="form-control" name="wysiwyg" id="wysiwyg" rows="7"></textarea>
+            </div>
         </div>
+
 
         <div class="row">
             <div class="col-md-6">

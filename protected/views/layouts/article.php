@@ -23,9 +23,17 @@
                     <li><a href="<?php echo Yii::app()->createUrl('/site/index'); ?>">Главная</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                <?php if (Setting::getData('articles') == 1): ?>
-                        <li><a href="<?php echo Yii::app()->createUrl('/article/index'); ?>">Все статьи</a></li>
-                <?php endif ?>
+                    <li><a href="<?php echo Yii::app()->createUrl('/article/index'); ?>">Все статьи</a></li>
+                    <form action="<?php echo Yii::app()->createUrl('/article/index'); ?>" class="navbar-form navbar-left" role="search">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Найти статью" name="search">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-custom btn-default"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>&nbsp;&nbsp;Поиск</button>
+
+
+                    </form>
                     <?php if (Yii::app()->user->name == 'admin' || Yii::app()->user->name == 'superadmin'): ?>
                         <li><a href="<?php echo Yii::app()->createUrl('/site/admin/'); ?>">Админка</a></li>
                         <li><a href="<?php echo Yii::app()->createUrl('/site/logout'); ?>">Выйти</a></li>
@@ -37,13 +45,13 @@
 </nav>
 
 
-    <div id="block_preview" class="block-content">
-        <div class="container">
-            <?php echo $content; ?>
-        </div>
+<div id="template_content" class="block-content">
+    <div class="container">
+        <?php echo $content; ?>
     </div>
+</div>
 
-<div id="block_preview" class="block-content <?php echo Block::getByAlias('footer')->animate ?>" style="<?php echo Block::buildStyle(Block::getByAlias('footer')->id, 1); ?>">
+<div id="" class="block-content <?php echo Block::getByAlias('footer')->animate ?>" style="<?php echo Block::buildStyle(Block::getByAlias('footer')->id, 1); ?>">
     <div class="container">
             <?php $this->widget('application.extensions.blockwidget.BlockWidget', array('item' => Block::getByAlias('footer'))); ?>
     </div>

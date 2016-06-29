@@ -152,8 +152,8 @@ class Category extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'categoryArticle' => array(self::MANY_MANY, 'Article', 'article_category(category_id, article_id)'),
-            'childs'=>array(self::HAS_MANY, get_class($this), 'parent_id'),
-            'parent'=>array(self::BELONGS_TO, get_class($this), 'parent_id'),
+            // 'childs'=>array(self::HAS_MANY, get_class($this), 'parent_id'),
+            // 'parent'=>array(self::BELONGS_TO, get_class($this), 'parent_id'),
 		);
 	}
 

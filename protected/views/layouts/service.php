@@ -34,6 +34,13 @@
     </div>
 </nav>
 
-<?php echo $content; ?>
+<div id="template_content" class="block-content">
+    <?php echo $content; ?>
+</div>
+
+<div id="" class="block-content <?php echo Block::getByAlias('footer')->animate ?>" style="<?php echo Block::buildStyle(Block::getByAlias('footer')->id, 1); ?>">
+        <?php $this->widget('application.extensions.blockwidget.BlockWidget', array('item' => Block::getByAlias('footer'))); ?>
+</div>
+
 
 <?php $this->endContent(); ?>

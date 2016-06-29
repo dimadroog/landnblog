@@ -20,15 +20,15 @@ return array(
 
 	'modules'=>array(
 		// uncomment the following to enable the Gii tool
-		// comment 'urlManager' and go http://localhost/landingcms/index.php?r=gii/
-		/*
-		'gii'=>array(
-			'class'=>'system.gii.GiiModule',
-			'password'=>'510141',
-			// If removed, Gii defaults to localhost only. Edit carefully to taste.
-			'ipFilters'=>array('*'),
-		),
-		*/
+		// comment 'urlManager' and go http://localhost/landnblog/index.php?r=gii/
+		
+		// 'gii'=>array(
+		// 	'class'=>'system.gii.GiiModule',
+		// 	'password'=>'510141',
+		// 	// If removed, Gii defaults to localhost only. Edit carefully to taste.
+		// 	'ipFilters'=>array('*'),
+		// ),
+		
 	),
 
 	// application components

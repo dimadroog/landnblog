@@ -180,7 +180,7 @@ class BlockController extends Controller
 			$item->save();
 			$previous_item->weight = $previous_item->weight+1;
 			$previous_item->save();
-			$this->redirect(array('site/admin/'));
+			$this->redirect(array('block/admin/'));
 		} else {
 			throw new CHttpException(403, 'У Вас нет прав для просмотра этой страницы.');
 		}
@@ -195,7 +195,7 @@ class BlockController extends Controller
 			$item->save();
 			$second_item->weight = $second_item->weight-1;
 			$second_item->save();
-			$this->redirect(array('site/admin/'));
+			$this->redirect(array('block/admin/'));
 		} else {
 			throw new CHttpException(403, 'У Вас нет прав для просмотра этой страницы.');
 		}

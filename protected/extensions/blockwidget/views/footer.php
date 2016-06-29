@@ -11,3 +11,9 @@
         </div>
     </div>
 </div>
+
+
+<div id="primary_footer"></div>
+<script type="text/javascript">
+    jQuery('#primary_footer').closest('.block-content').addClass('bg-primary'); 
+</script>
